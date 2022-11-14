@@ -3,7 +3,7 @@ package com.hb0730.boot.admin.project.system.quartz.handler;
 import org.springframework.stereotype.Component;
 
 /**
- * @author bing_huang
+ * @author Administrator
  */
 
 @Component("taskTest")

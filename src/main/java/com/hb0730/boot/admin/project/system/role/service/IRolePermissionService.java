@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 角色权限  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IRolePermissionService extends IService<RolePermissionEntity> {

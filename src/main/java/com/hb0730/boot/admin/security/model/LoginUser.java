@@ -7,8 +7,7 @@ import lombok.ToString;
 /**
  * 响应
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/7/2
+ * @author Administrator
  * @since 1.0.0
  */
 @Data

@@ -1,7 +1,7 @@
 package com.hb0730.boot.admin.project.system.quartz.handler;
 
 /**
- * @author bing_huang
+ * @author Administrator
  */
 public class Test1 {
     private Integer type;

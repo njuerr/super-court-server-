@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 用户账号  前端控制器
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @RestController

@@ -19,8 +19,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * 验证失败
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/7/2
+ * @author Administrator
  * @see org.springframework.security.web.authentication.AuthenticationFailureHandler
  * @since 1.0.0
  */

@@ -12,8 +12,7 @@ import java.util.Set;
 /**
  * 权限自定义处理
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/7/2
+ * @author Administrator
  * @since 1.0.0
  */
 @Component("permissionHandler")

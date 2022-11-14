@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * job 恢复
  *
- * @author bing_huang
+ * @author Administrator
  */
 @Component
 public class JobPauseAction extends AbstractAction {

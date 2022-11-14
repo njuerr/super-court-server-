@@ -6,7 +6,7 @@ import com.hb0730.boot.admin.project.system.permission.model.entity.PermissionEn
 /**
  * 权限  Mapper 接口
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IPermissionMapper extends BaseMapper<PermissionEntity> {

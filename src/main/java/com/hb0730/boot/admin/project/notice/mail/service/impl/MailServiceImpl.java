@@ -22,7 +22,7 @@ import java.util.Map;
 /**
  * 邮箱服务实现
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Service

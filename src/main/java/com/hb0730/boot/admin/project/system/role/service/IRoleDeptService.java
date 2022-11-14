@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 角色数据权限  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IRoleDeptService extends IService<RoleDeptEntity> {

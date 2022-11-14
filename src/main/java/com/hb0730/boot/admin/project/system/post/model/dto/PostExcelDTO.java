@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * 岗位 excel 实体
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

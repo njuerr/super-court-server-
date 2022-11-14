@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * @author bing_huang
+ * @author Administrator
  */
 @Component
 public class JobDeleteAction extends AbstractAction {

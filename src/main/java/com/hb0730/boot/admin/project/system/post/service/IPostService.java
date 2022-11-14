@@ -11,7 +11,7 @@ import com.hb0730.boot.admin.project.system.post.model.query.PostParams;
 /**
  * 岗位  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IPostService extends ISuperBaseService<Long, PostParams, PostDTO, PostEntity>, ISuperPoiService<PostParams, PostExcelDTO> {

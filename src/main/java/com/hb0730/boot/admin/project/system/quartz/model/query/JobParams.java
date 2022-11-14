@@ -8,7 +8,7 @@ import lombok.ToString;
 /**
  * job检索条件
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

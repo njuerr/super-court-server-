@@ -11,7 +11,7 @@ import java.util.Collection;
 /**
  * 用户角色  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IUserRoleService extends IService<UserRoleEntity> {

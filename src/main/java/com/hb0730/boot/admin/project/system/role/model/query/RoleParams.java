@@ -8,7 +8,7 @@ import lombok.ToString;
 /**
  * 角色查询条件
  *
- * @author bing_huang
+ * @author Administrator
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

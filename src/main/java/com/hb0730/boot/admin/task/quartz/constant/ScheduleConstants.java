@@ -3,7 +3,7 @@ package com.hb0730.boot.admin.task.quartz.constant;
 /**
  * 任务调度常量
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class ScheduleConstants {

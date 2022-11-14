@@ -5,8 +5,7 @@ import lombok.*;
 /**
  * job invoke info
  *
- * @author bing_huang
- * @see com.hb0730.boot.admin.task.utils.JobInvokeUtil
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

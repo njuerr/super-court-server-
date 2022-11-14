@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * job info
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

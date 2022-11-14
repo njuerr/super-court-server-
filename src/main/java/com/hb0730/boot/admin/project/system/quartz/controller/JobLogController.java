@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 任务日志  前端控制器
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @RestController

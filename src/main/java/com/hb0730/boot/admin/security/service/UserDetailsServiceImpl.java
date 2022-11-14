@@ -13,8 +13,7 @@ import org.springframework.stereotype.Service;
 /**
  * 用户详情服务
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/7/2
+ * @author Administrator
  * @since 1.0.0
  */
 @Service

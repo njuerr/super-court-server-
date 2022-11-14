@@ -20,7 +20,7 @@ import java.time.ZoneId;
 /**
  * 抽象quartz调用
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public abstract class AbstractQuartzJob extends QuartzJobBean {

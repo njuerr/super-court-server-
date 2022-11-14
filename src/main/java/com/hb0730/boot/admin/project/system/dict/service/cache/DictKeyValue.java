@@ -7,8 +7,7 @@ import java.util.List;
 /**
  * 字典缓存-参数信息
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/7/2
+ * @author Administrator
  * @since 1.0.0
  */
 public class DictKeyValue implements KeyValue {

@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 /**
  * 菜单  Mapper 接口
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IMenuMapper extends BaseMapper<MenuEntity> {

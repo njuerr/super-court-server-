@@ -13,7 +13,7 @@ import java.util.Collection;
 /**
  * 用户账号  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IUserAccountService extends ISuperBaseService<Long, UserAccountParams, UserAccountDTO, UserAccountEntity> {

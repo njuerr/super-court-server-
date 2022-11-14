@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * 用户账号信息
  *
- * @author bing_huang
+ * @author Administrator
  * @see 3.0.0
  */
 @Data

@@ -24,7 +24,7 @@ import java.util.Set;
 /**
  * 任务执行工具
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class JobInvokeUtil {

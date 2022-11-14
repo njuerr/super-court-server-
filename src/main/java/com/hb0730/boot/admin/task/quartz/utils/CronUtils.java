@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * cron表达式工具类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class CronUtils {

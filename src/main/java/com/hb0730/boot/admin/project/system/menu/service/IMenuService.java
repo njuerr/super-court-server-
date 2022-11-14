@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 菜单  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IMenuService extends ISuperBaseService<Long, MenuParams, MenuDTO, MenuEntity> {

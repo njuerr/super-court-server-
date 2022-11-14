@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 数据字典  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 数据字典
  */
 public interface IDictService extends ISuperBaseService<Long, DictParams, DictDTO, DictEntity> {

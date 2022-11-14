@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 新增
  *
- * @author bing_huang
+ * @author Administrator
  */
 @Component
 public class JobAddAction extends AbstractAction {

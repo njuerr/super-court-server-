@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 用户岗位  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IUserPostService extends IService<UserPostEntity> {

@@ -6,7 +6,7 @@ import com.hb0730.boot.admin.project.system.post.model.entity.PostEntity;
 /**
  * 岗位  Mapper 接口
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IPostMapper extends BaseMapper<PostEntity> {
