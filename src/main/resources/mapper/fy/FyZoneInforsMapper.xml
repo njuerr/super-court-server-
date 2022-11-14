@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyZoneInforsMapper">
+  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyZoneInfors">
+    <!--@mbg.generated-->
+    <!--@Table fy_zone_infors-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="zone_id" jdbcType="LONGVARCHAR" property="zoneId" />
+    <result column="zone_name" jdbcType="LONGVARCHAR" property="zoneName" />
+    <result column="zone_sort" jdbcType="BIGINT" property="zoneSort" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, zone_id, zone_name, zone_sort
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from fy_zone_infors
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from fy_zone_infors
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyZoneInfors" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_zone_infors (zone_id, zone_name, zone_sort
+      )
+    values (#{zoneId,jdbcType=LONGVARCHAR}, #{zoneName,jdbcType=LONGVARCHAR}, #{zoneSort,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyZoneInfors" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_zone_infors
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zoneId != null">
+        zone_id,
+      </if>
+      <if test="zoneName != null">
+        zone_name,
+      </if>
+      <if test="zoneSort != null">
+        zone_sort,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zoneId != null">
+        #{zoneId,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="zoneName != null">
+        #{zoneName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="zoneSort != null">
+        #{zoneSort,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyZoneInfors">
+    <!--@mbg.generated-->
+    update fy_zone_infors
+    <set>
+      <if test="zoneId != null">
+        zone_id = #{zoneId,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="zoneName != null">
+        zone_name = #{zoneName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="zoneSort != null">
+        zone_sort = #{zoneSort,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyZoneInfors">
+    <!--@mbg.generated-->
+    update fy_zone_infors
+    set zone_id = #{zoneId,jdbcType=LONGVARCHAR},
+      zone_name = #{zoneName,jdbcType=LONGVARCHAR},
+      zone_sort = #{zoneSort,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

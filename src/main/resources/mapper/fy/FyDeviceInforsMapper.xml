@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyDeviceInforsMapper">
+  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyDeviceInfors">
+    <!--@mbg.generated-->
+    <!--@Table fy_device_infors-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="court_id" jdbcType="LONGVARCHAR" property="courtId" />
+    <result column="deviceid" jdbcType="LONGVARCHAR" property="deviceid" />
+    <result column="device_name" jdbcType="LONGVARCHAR" property="deviceName" />
+    <result column="device_ip" jdbcType="LONGVARCHAR" property="deviceIp" />
+    <result column="control_url" jdbcType="LONGVARCHAR" property="controlUrl" />
+    <result column="device_state" jdbcType="LONGVARCHAR" property="deviceState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, court_id, deviceid, device_name, device_ip, control_url, device_state
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from fy_device_infors
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from fy_device_infors
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceInfors" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_device_infors (court_id, deviceid, device_name,
+      device_ip, control_url, device_state
+      )
+    values (#{courtId,jdbcType=LONGVARCHAR}, #{deviceid,jdbcType=LONGVARCHAR}, #{deviceName,jdbcType=LONGVARCHAR},
+      #{deviceIp,jdbcType=LONGVARCHAR}, #{controlUrl,jdbcType=LONGVARCHAR}, #{deviceState,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceInfors" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_device_infors
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="courtId != null">
+        court_id,
+      </if>
+      <if test="deviceid != null">
+        deviceid,
+      </if>
+      <if test="deviceName != null">
+        device_name,
+      </if>
+      <if test="deviceIp != null">
+        device_ip,
+      </if>
+      <if test="controlUrl != null">
+        control_url,
+      </if>
+      <if test="deviceState != null">
+        device_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="courtId != null">
+        #{courtId,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceid != null">
+        #{deviceid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceName != null">
+        #{deviceName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceIp != null">
+        #{deviceIp,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="controlUrl != null">
+        #{controlUrl,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceState != null">
+        #{deviceState,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceInfors">
+    <!--@mbg.generated-->
+    update fy_device_infors
+    <set>
+      <if test="courtId != null">
+        court_id = #{courtId,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceid != null">
+        deviceid = #{deviceid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceName != null">
+        device_name = #{deviceName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceIp != null">
+        device_ip = #{deviceIp,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="controlUrl != null">
+        control_url = #{controlUrl,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceState != null">
+        device_state = #{deviceState,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceInfors">
+    <!--@mbg.generated-->
+    update fy_device_infors
+    set court_id = #{courtId,jdbcType=LONGVARCHAR},
+      deviceid = #{deviceid,jdbcType=LONGVARCHAR},
+      device_name = #{deviceName,jdbcType=LONGVARCHAR},
+      device_ip = #{deviceIp,jdbcType=LONGVARCHAR},
+      control_url = #{controlUrl,jdbcType=LONGVARCHAR},
+      device_state = #{deviceState,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

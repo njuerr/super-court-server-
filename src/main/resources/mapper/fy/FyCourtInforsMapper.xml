@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyCourtInforsMapper">
+  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyCourtInfors">
+    <!--@mbg.generated-->
+    <!--@Table fy_court_infors-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="court_id" jdbcType="LONGVARCHAR" property="courtId" />
+    <result column="court_zone" jdbcType="LONGVARCHAR" property="courtZone" />
+    <result column="court_name" jdbcType="LONGVARCHAR" property="courtName" />
+    <result column="court_state" jdbcType="LONGVARCHAR" property="courtState" />
+    <result column="court_sort" jdbcType="BIGINT" property="courtSort" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, court_id, court_zone, court_name, court_state, court_sort
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from fy_court_infors
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from fy_court_infors
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyCourtInfors" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_court_infors (court_id, court_zone, court_name,
+      court_state, court_sort)
+    values (#{courtId,jdbcType=LONGVARCHAR}, #{courtZone,jdbcType=LONGVARCHAR}, #{courtName,jdbcType=LONGVARCHAR},
+      #{courtState,jdbcType=LONGVARCHAR}, #{courtSort,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyCourtInfors" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_court_infors
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="courtId != null">
+        court_id,
+      </if>
+      <if test="courtZone != null">
+        court_zone,
+      </if>
+      <if test="courtName != null">
+        court_name,
+      </if>
+      <if test="courtState != null">
+        court_state,
+      </if>
+      <if test="courtSort != null">
+        court_sort,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="courtId != null">
+        #{courtId,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="courtZone != null">
+        #{courtZone,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="courtName != null">
+        #{courtName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="courtState != null">
+        #{courtState,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="courtSort != null">
+        #{courtSort,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyCourtInfors">
+    <!--@mbg.generated-->
+    update fy_court_infors
+    <set>
+      <if test="courtId != null">
+        court_id = #{courtId,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="courtZone != null">
+        court_zone = #{courtZone,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="courtName != null">
+        court_name = #{courtName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="courtState != null">
+        court_state = #{courtState,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="courtSort != null">
+        court_sort = #{courtSort,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyCourtInfors">
+    <!--@mbg.generated-->
+    update fy_court_infors
+    set court_id = #{courtId,jdbcType=LONGVARCHAR},
+      court_zone = #{courtZone,jdbcType=LONGVARCHAR},
+      court_name = #{courtName,jdbcType=LONGVARCHAR},
+      court_state = #{courtState,jdbcType=LONGVARCHAR},
+      court_sort = #{courtSort,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectById" resultMap="BaseResultMap">
+      select * from fy_court_infors where id = #{id}
+    </select>
+</mapper>

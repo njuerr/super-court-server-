@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyFaillogsMapper">
+  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyFaillogs">
+    <!--@mbg.generated-->
+    <!--@Table fy_faillogs-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="failid" jdbcType="LONGVARCHAR" property="failid" />
+    <result column="reporttime" jdbcType="LONGVARCHAR" property="reporttime" />
+    <result column="processtime" jdbcType="LONGVARCHAR" property="processtime" />
+    <result column="courtid" jdbcType="LONGVARCHAR" property="courtid" />
+    <result column="reportuser" jdbcType="LONGVARCHAR" property="reportuser" />
+    <result column="processuser" jdbcType="LONGVARCHAR" property="processuser" />
+    <result column="failcontent" jdbcType="LONGVARCHAR" property="failcontent" />
+    <result column="processcontent" jdbcType="LONGVARCHAR" property="processcontent" />
+    <result column="deviceid" jdbcType="LONGVARCHAR" property="deviceid" />
+    <result column="repair" jdbcType="LONGVARCHAR" property="repair" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, failid, reporttime, processtime, courtid, reportuser, processuser, failcontent,
+    processcontent, deviceid, repair
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from fy_faillogs
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from fy_faillogs
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyFaillogs" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_faillogs (failid, reporttime, processtime,
+      courtid, reportuser, processuser,
+      failcontent, processcontent, deviceid,
+      repair)
+    values (#{failid,jdbcType=LONGVARCHAR}, #{reporttime,jdbcType=LONGVARCHAR}, #{processtime,jdbcType=LONGVARCHAR},
+      #{courtid,jdbcType=LONGVARCHAR}, #{reportuser,jdbcType=LONGVARCHAR}, #{processuser,jdbcType=LONGVARCHAR},
+      #{failcontent,jdbcType=LONGVARCHAR}, #{processcontent,jdbcType=LONGVARCHAR}, #{deviceid,jdbcType=LONGVARCHAR},
+      #{repair,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyFaillogs" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_faillogs
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="failid != null">
+        failid,
+      </if>
+      <if test="reporttime != null">
+        reporttime,
+      </if>
+      <if test="processtime != null">
+        processtime,
+      </if>
+      <if test="courtid != null">
+        courtid,
+      </if>
+      <if test="reportuser != null">
+        reportuser,
+      </if>
+      <if test="processuser != null">
+        processuser,
+      </if>
+      <if test="failcontent != null">
+        failcontent,
+      </if>
+      <if test="processcontent != null">
+        processcontent,
+      </if>
+      <if test="deviceid != null">
+        deviceid,
+      </if>
+      <if test="repair != null">
+        repair,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="failid != null">
+        #{failid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="reporttime != null">
+        #{reporttime,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="processtime != null">
+        #{processtime,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="courtid != null">
+        #{courtid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="reportuser != null">
+        #{reportuser,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="processuser != null">
+        #{processuser,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="failcontent != null">
+        #{failcontent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="processcontent != null">
+        #{processcontent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceid != null">
+        #{deviceid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="repair != null">
+        #{repair,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyFaillogs">
+    <!--@mbg.generated-->
+    update fy_faillogs
+    <set>
+      <if test="failid != null">
+        failid = #{failid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="reporttime != null">
+        reporttime = #{reporttime,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="processtime != null">
+        processtime = #{processtime,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="courtid != null">
+        courtid = #{courtid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="reportuser != null">
+        reportuser = #{reportuser,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="processuser != null">
+        processuser = #{processuser,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="failcontent != null">
+        failcontent = #{failcontent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="processcontent != null">
+        processcontent = #{processcontent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deviceid != null">
+        deviceid = #{deviceid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="repair != null">
+        repair = #{repair,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyFaillogs">
+    <!--@mbg.generated-->
+    update fy_faillogs
+    set failid = #{failid,jdbcType=LONGVARCHAR},
+      reporttime = #{reporttime,jdbcType=LONGVARCHAR},
+      processtime = #{processtime,jdbcType=LONGVARCHAR},
+      courtid = #{courtid,jdbcType=LONGVARCHAR},
+      reportuser = #{reportuser,jdbcType=LONGVARCHAR},
+      processuser = #{processuser,jdbcType=LONGVARCHAR},
+      failcontent = #{failcontent,jdbcType=LONGVARCHAR},
+      processcontent = #{processcontent,jdbcType=LONGVARCHAR},
+      deviceid = #{deviceid,jdbcType=LONGVARCHAR},
+      repair = #{repair,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

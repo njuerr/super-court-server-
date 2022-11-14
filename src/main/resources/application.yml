@@ -8,9 +8,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/boot-admin?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=GMT%2b8
-    username: root
-    password: admin123
+    url: jdbc:mysql://rm-8vb6619d5587u0c9jfo.mysql.zhangbei.rds.aliyuncs.com:3306/audio?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=GMT%2b8
+    username: jcqljy
+    password: Baby0802
     platform: mysql
     hikari:
       minimum-idle: 5
@@ -22,9 +22,10 @@ spring:
       connection-timeout: 30000
       connection-test-query: SELECT 1
   redis:
-    host: localhost
-    password:
+    host: r-8vb0ot3w2kxkqy9lcppd.redis.zhangbei.rds.aliyuncs.com
+    password: Baby0802
     port: 6379
+    database: 4
     lettuce:
       pool:
         max-active: 8

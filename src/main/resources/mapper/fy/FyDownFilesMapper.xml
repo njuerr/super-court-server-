@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyDownFilesMapper">
+  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyDownFiles">
+    <!--@mbg.generated-->
+    <!--@Table fy_down_files-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="courtid" jdbcType="LONGVARCHAR" property="courtid" />
+    <result column="filename" jdbcType="LONGVARCHAR" property="filename" />
+    <result column="filesavename" jdbcType="LONGVARCHAR" property="filesavename" />
+    <result column="filetext" jdbcType="LONGVARCHAR" property="filetext" />
+    <result column="filetype" jdbcType="LONGVARCHAR" property="filetype" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, courtid, filename, filesavename, filetext, filetype
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from fy_down_files
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from fy_down_files
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDownFiles" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_down_files (courtid, filename, filesavename,
+      filetext, filetype)
+    values (#{courtid,jdbcType=LONGVARCHAR}, #{filename,jdbcType=LONGVARCHAR}, #{filesavename,jdbcType=LONGVARCHAR},
+      #{filetext,jdbcType=LONGVARCHAR}, #{filetype,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDownFiles" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_down_files
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="courtid != null">
+        courtid,
+      </if>
+      <if test="filename != null">
+        filename,
+      </if>
+      <if test="filesavename != null">
+        filesavename,
+      </if>
+      <if test="filetext != null">
+        filetext,
+      </if>
+      <if test="filetype != null">
+        filetype,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="courtid != null">
+        #{courtid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="filename != null">
+        #{filename,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="filesavename != null">
+        #{filesavename,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="filetext != null">
+        #{filetext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="filetype != null">
+        #{filetype,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDownFiles">
+    <!--@mbg.generated-->
+    update fy_down_files
+    <set>
+      <if test="courtid != null">
+        courtid = #{courtid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="filename != null">
+        filename = #{filename,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="filesavename != null">
+        filesavename = #{filesavename,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="filetext != null">
+        filetext = #{filetext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="filetype != null">
+        filetype = #{filetype,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDownFiles">
+    <!--@mbg.generated-->
+    update fy_down_files
+    set courtid = #{courtid,jdbcType=LONGVARCHAR},
+      filename = #{filename,jdbcType=LONGVARCHAR},
+      filesavename = #{filesavename,jdbcType=LONGVARCHAR},
+      filetext = #{filetext,jdbcType=LONGVARCHAR},
+      filetype = #{filetype,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

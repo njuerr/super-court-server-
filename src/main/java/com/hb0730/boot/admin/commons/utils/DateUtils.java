@@ -2,6 +2,7 @@ package com.hb0730.boot.admin.commons.utils;
 
 import lombok.experimental.UtilityClass;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -163,5 +164,10 @@ public class DateUtils {
         c.setTime(date);
         c.add(calendarField, amount);
         return c.getTime();
+    }
+
+    public static String format(String pattern,Date date){
+        SimpleDateFormat simpleDateFormat  = new SimpleDateFormat(pattern);
+       return simpleDateFormat.format(date);
     }
 }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyDeviceTimesMapper">
+  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes">
+    <!--@mbg.generated-->
+    <!--@Table fy_device_times-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="device_id" jdbcType="VARCHAR" property="deviceId" />
+    <result column="online_time" jdbcType="TIMESTAMP" property="onlineTime" />
+    <result column="outline_time" jdbcType="TIMESTAMP" property="outlineTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, device_id, online_time, outline_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from fy_device_times
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from fy_device_times
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_device_times (device_id, online_time, outline_time
+      )
+    values (#{deviceId,jdbcType=VARCHAR}, #{onlineTime,jdbcType=TIMESTAMP}, #{outlineTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_device_times
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        device_id,
+      </if>
+      <if test="onlineTime != null">
+        online_time,
+      </if>
+      <if test="outlineTime != null">
+        outline_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineTime != null">
+        #{onlineTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="outlineTime != null">
+        #{outlineTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes">
+    <!--@mbg.generated-->
+    update fy_device_times
+    <set>
+      <if test="deviceId != null">
+        device_id = #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineTime != null">
+        online_time = #{onlineTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="outlineTime != null">
+        outline_time = #{outlineTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes">
+    <!--@mbg.generated-->
+    update fy_device_times
+    set device_id = #{deviceId,jdbcType=VARCHAR},
+      online_time = #{onlineTime,jdbcType=TIMESTAMP},
+      outline_time = #{outlineTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

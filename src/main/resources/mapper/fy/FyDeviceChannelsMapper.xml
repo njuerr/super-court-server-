@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyDeviceChannelsMapper">
+  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels">
+    <!--@mbg.generated-->
+    <!--@Table fy_device_channels-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="deviceid" jdbcType="LONGVARCHAR" property="deviceid" />
+    <result column="channel_name" jdbcType="LONGVARCHAR" property="channelName" />
+    <result column="channel_code" jdbcType="LONGVARCHAR" property="channelCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, deviceid, channel_name, channel_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from fy_device_channels
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from fy_device_channels
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_device_channels (deviceid, channel_name, channel_code
+      )
+    values (#{deviceid,jdbcType=LONGVARCHAR}, #{channelName,jdbcType=LONGVARCHAR}, #{channelCode,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_device_channels
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deviceid != null">
+        deviceid,
+      </if>
+      <if test="channelName != null">
+        channel_name,
+      </if>
+      <if test="channelCode != null">
+        channel_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deviceid != null">
+        #{deviceid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="channelName != null">
+        #{channelName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="channelCode != null">
+        #{channelCode,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels">
+    <!--@mbg.generated-->
+    update fy_device_channels
+    <set>
+      <if test="deviceid != null">
+        deviceid = #{deviceid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="channelName != null">
+        channel_name = #{channelName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="channelCode != null">
+        channel_code = #{channelCode,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels">
+    <!--@mbg.generated-->
+    update fy_device_channels
+    set deviceid = #{deviceid,jdbcType=LONGVARCHAR},
+      channel_name = #{channelName,jdbcType=LONGVARCHAR},
+      channel_code = #{channelCode,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

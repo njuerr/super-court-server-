@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FySystemlogsMapper">
+  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FySystemlogs">
+    <!--@mbg.generated-->
+    <!--@Table fy_systemlogs-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="time" jdbcType="LONGVARCHAR" property="time" />
+    <result column="address" jdbcType="LONGVARCHAR" property="address" />
+    <result column="user_name" jdbcType="LONGVARCHAR" property="userName" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `time`, address, user_name, content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from fy_systemlogs
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from fy_systemlogs
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FySystemlogs" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_systemlogs (`time`, address, user_name,
+      content)
+    values (#{time,jdbcType=LONGVARCHAR}, #{address,jdbcType=LONGVARCHAR}, #{userName,jdbcType=LONGVARCHAR},
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FySystemlogs" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fy_systemlogs
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="time != null">
+        `time`,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="time != null">
+        #{time,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FySystemlogs">
+    <!--@mbg.generated-->
+    update fy_systemlogs
+    <set>
+      <if test="time != null">
+        `time` = #{time,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FySystemlogs">
+    <!--@mbg.generated-->
+    update fy_systemlogs
+    set `time` = #{time,jdbcType=LONGVARCHAR},
+      address = #{address,jdbcType=LONGVARCHAR},
+      user_name = #{userName,jdbcType=LONGVARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
