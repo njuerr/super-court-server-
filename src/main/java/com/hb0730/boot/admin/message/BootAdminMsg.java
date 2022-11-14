@@ -1,8 +1,7 @@
 package com.hb0730.boot.admin.message;
 
 /**
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/7/9
+ * @author Administrator
  */
 public interface BootAdminMsg {
     /**

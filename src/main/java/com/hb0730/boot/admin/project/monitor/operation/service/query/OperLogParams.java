@@ -1,4 +1,4 @@
-package com.hb0730.boot.admin.project.monitor.operation.model.query;
+package com.hb0730.boot.admin.project.monitor.operation.service.query;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.hb0730.boot.admin.domain.model.query.BaseParams;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 /**
  * 操作日志检索
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

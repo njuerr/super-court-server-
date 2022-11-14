@@ -9,7 +9,7 @@ import com.hb0730.boot.admin.project.system.user.model.query.UserInfoParams;
 /**
  * 用户信息  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IUserInfoService extends ISuperBaseService<Long, UserInfoParams, UserInfoDTO, UserInfoEntity> {

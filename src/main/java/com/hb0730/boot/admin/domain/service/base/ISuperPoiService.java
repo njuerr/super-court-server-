@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @param <PARAMS> 过滤参数类型
  * @param <EXCEL>  excel实体类型
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface ISuperPoiService<PARAMS extends BaseParams, EXCEL extends ExcelDomain> {

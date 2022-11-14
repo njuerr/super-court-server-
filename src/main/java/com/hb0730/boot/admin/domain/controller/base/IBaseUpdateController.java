@@ -31,7 +31,7 @@ import java.io.Serializable;
  * @param <DTO>    vo类型
  * @param <ID>     id 类型
  * @param <ENTITY> 实体类型
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IBaseUpdateController<ID extends Serializable, DTO extends BaseDTO, ENTITY extends BaseDomain> extends IBaseController<ENTITY> {

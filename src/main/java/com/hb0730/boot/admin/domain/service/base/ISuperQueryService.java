@@ -16,7 +16,7 @@ import java.util.List;
  *
  * @param <DTO>    显示层对象类型
  * @param <PARAMS> 请求参数类型
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface ISuperQueryService<PARAMS extends BaseParams, DTO extends BaseDTO> {

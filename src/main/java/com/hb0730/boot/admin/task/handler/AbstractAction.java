@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * @author bing_huang
+ * @author Administrator
  */
 public abstract class AbstractAction implements IJobAction {
     private final JobHelper jobHelper;

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 构建前端路由菜单
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

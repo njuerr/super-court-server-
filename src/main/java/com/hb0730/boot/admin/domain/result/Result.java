@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 响应
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class Result<T> implements Serializable {

@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * login AccessToken
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface ITokenService {

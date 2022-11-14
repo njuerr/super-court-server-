@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 /**
  * 登录日志
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.
  */
 @Data

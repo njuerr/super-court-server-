@@ -10,8 +10,7 @@ import java.io.Serializable;
 /**
  * boot admin 配置
  *
- * @author bing_huang
- * @since 3.0.0
+ * @author Administrator
  */
 @Data
 @Configuration

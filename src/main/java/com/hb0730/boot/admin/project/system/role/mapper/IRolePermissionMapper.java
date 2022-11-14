@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 角色权限  Mapper 接口
  * </p>
  *
- * @author bing_huang
+ * @author Administrator
  * @since 2020-09-03
  */
 public interface IRolePermissionMapper extends BaseMapper<RolePermissionEntity> {

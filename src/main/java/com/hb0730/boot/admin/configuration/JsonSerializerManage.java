@@ -15,7 +15,7 @@ import java.util.TimeZone;
 /**
  * json序列化
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @JsonComponent

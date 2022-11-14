@@ -15,9 +15,7 @@ import java.util.stream.Collectors;
 /**
  * Boot-Admin 缓存配置
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/7/2
- * @since 1.0.0
+ * @author Administrator
  */
 @RequiredArgsConstructor
 public class BootAdminCache {

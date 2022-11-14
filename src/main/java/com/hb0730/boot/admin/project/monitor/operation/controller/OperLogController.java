@@ -10,7 +10,7 @@ import com.hb0730.boot.admin.domain.result.Result;
 import com.hb0730.boot.admin.domain.result.R;
 import com.hb0730.boot.admin.project.monitor.operation.model.dto.OperLogDTO;
 import com.hb0730.boot.admin.project.monitor.operation.model.entity.OperLogEntity;
-import com.hb0730.boot.admin.project.monitor.operation.model.query.OperLogParams;
+import com.hb0730.boot.admin.project.monitor.operation.service.query.OperLogParams;
 import com.hb0730.boot.admin.project.monitor.operation.service.IOperLogService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 操作日志  前端控制器
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @RestController

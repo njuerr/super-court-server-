@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * 部门  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IDeptService extends ISuperBaseService<Long, DeptParams, DeptDTO, DeptEntity> {

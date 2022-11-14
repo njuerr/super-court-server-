@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 角色  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IRoleService extends ISuperBaseService<Long, RoleParams, RoleExtDTO, RoleEntity> {

@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 /**
- * @author bing_huang
+ * @author Administrator
  */
 public interface IJobAction {
 

@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
 /**
  * menu listener,用来支持在线刷新菜单路由
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @RequiredArgsConstructor

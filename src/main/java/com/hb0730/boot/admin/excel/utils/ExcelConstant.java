@@ -3,7 +3,7 @@ package com.hb0730.boot.admin.excel.utils;
 /**
  * excel导入导出常量
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class ExcelConstant {

@@ -11,7 +11,7 @@ import java.util.Date;
 /**
  * 在线用户
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

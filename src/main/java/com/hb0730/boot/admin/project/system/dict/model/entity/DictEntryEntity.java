@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 /**
  * 数据字典项
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

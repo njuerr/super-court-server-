@@ -15,9 +15,7 @@ import java.util.function.Function;
 /**
  * map util
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/1/10
- * @since 3.1.0
+ * @author Administrator
  */
 @UtilityClass
 public class MapUtils {

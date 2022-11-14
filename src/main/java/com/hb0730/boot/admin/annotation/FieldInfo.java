@@ -4,13 +4,11 @@ import com.hb0730.boot.admin.aspectj.FieldInfoAspectj;
 
 import java.lang.annotation.*;
 
+
+
 /**
  * 属性描述
- *
- * @author bing_huang
- * @see FieldClass
- * @see FieldInfoAspectj
- * @since 3.0.0
+ * @author Administrator
  */
 @Documented
 @Target(value = ElementType.FIELD)

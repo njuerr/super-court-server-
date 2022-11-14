@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author bing_huang
+ * @author Administrator
  */
 @Component
 public class JobActionFactory {

@@ -11,7 +11,7 @@ import java.util.Collection;
 /**
  * 任务调度 event
  *
- * @author bing_huang
+ * @author Administrator
  */
 public class JobEvent extends ApplicationEvent {
     @Getter

@@ -15,8 +15,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 /**
  * boot admin 配置
  *
- * @author bing_huang
- * @since 3.0.0
+ * @author Administrator
  */
 @Configuration
 @RequiredArgsConstructor

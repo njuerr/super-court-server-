@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * 类型转换
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface InputConverter<DOMAIN> {

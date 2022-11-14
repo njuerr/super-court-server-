@@ -12,8 +12,7 @@ import lombok.experimental.Accessors;
 /**
  * 角色
  *
- * @author bing_huang
- * @since 2020-09-03
+ * @author Administrator
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

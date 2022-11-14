@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * redis 实现
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class RedisTokenServiceImpl extends AbstractTokenService {

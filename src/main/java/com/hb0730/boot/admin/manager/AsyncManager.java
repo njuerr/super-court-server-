@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 异步任务管理器
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class AsyncManager {

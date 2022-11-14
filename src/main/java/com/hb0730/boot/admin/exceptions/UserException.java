@@ -8,7 +8,7 @@ import lombok.NonNull;
 /**
  * 用户相关异常
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class UserException extends AbstractException {

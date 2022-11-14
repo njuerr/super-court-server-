@@ -15,7 +15,7 @@ import java.util.Objects;
 /**
  * 全局异常捕获
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @RestControllerAdvice

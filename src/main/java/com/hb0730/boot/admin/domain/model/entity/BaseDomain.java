@@ -5,7 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 /**
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

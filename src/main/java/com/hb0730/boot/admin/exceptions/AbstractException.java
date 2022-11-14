@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NonNull;
 
 /**
- * @author bing_huang
+ * @author Administrator
  */
 public abstract class AbstractException extends BusinessException {
     @Getter

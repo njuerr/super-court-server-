@@ -5,8 +5,7 @@ import com.hb0730.boot.admin.cache.KeyValue;
 import java.util.Map;
 
 /**
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/7/2
+ * @author Administrator
  * @since 1.0.0
  */
 public class OptionsKeyValue implements KeyValue {

@@ -5,7 +5,7 @@ import com.hb0730.boot.admin.commons.enums.ResponseStatusEnum;
 /**
  * result工具类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class R {

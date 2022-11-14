@@ -5,7 +5,7 @@ import lombok.Getter;
 /**
  * 状态{成功，失败}
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public enum StatusEnum implements ValueEnum<Integer> {

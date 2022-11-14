@@ -12,7 +12,7 @@ import java.util.Collection;
 /**
  * 用户信息(包含用户账号，用户详情以及用户权限组织信息)
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

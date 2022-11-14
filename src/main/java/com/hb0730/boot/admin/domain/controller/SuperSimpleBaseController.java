@@ -20,7 +20,7 @@ import java.lang.reflect.ParameterizedType;
  * @param <DTO>    vo类型
  * @param <PARAMS> 请求类型
  * @param <ENTITY> 实体类型
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public abstract class SuperSimpleBaseController<ID extends Serializable, DTO extends BaseDTO, PARAMS extends BaseParams, ENTITY extends BaseDomain>

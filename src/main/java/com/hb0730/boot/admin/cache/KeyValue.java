@@ -3,9 +3,7 @@ package com.hb0730.boot.admin.cache;
 /**
  * 缓存定义
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/7/2
- * @since 1.0.0
+ * @author Administrator
  */
 public interface KeyValue {
     /**

@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationEvent;
 /**
  * 角色权限event 用于动态刷新用户权限
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 

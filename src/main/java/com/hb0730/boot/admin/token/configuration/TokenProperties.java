@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * token 配置
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

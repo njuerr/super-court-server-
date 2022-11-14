@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 /**
  * 入口
  *
- * @author <a href="huangbing0730@gmail.com">bing_huang</a>
+ * @author Administrator
  * @since 3.0.0
  */
 @SpringBootApplication

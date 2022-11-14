@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * 邮箱服务
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IMailService {

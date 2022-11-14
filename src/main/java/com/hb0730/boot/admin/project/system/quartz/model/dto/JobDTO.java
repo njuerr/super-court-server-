@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 /**
  * 定时任务(quartz)
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

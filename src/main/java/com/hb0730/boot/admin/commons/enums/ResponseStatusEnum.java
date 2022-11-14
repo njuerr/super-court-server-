@@ -3,7 +3,7 @@ package com.hb0730.boot.admin.commons.enums;
 /**
  * 响应状态
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public enum ResponseStatusEnum implements ValueEnum<String> {

@@ -11,7 +11,7 @@ import lombok.experimental.Accessors;
 /**
  * 登录日志
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

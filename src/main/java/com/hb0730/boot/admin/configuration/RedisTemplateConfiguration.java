@@ -12,8 +12,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 /**
  * redis 配置
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/1/10
+ * @author Administrator
  * @since 3.1.0
  */
 @Configuration

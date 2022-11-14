@@ -16,7 +16,7 @@ import javax.annotation.Nonnull;
 /**
  * job 帮助类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Component

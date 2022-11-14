@@ -41,11 +41,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
+
 /**
- * 操作日志
- *
- * @author bing_huang
- * @since 3.0.0
+ *  操作日志
+ * @author Administrator
  */
 @Aspect
 @Component

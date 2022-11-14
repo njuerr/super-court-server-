@@ -34,7 +34,7 @@ import java.util.stream.Collectors;
 /**
  * 数据字典  服务实现类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Service

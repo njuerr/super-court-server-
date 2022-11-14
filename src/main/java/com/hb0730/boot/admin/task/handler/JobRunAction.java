@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 立即执行
  *
- * @author bing_huang
+ * @author Administrator
  */
 @Component
 public class JobRunAction extends AbstractAction {

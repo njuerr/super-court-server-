@@ -11,8 +11,7 @@ import java.util.Set;
 /**
  * 验证
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/1/10
+ * @author Administrator
  * @since 3.1.0
  */
 @UtilityClass
