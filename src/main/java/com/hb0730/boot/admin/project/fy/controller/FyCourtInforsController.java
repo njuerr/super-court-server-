@@ -5,8 +5,11 @@ import com.hb0730.boot.admin.commons.enums.BusinessTypeEnum;
 import com.hb0730.boot.admin.domain.result.R;
 import com.hb0730.boot.admin.domain.result.Result;
 import com.hb0730.boot.admin.project.fy.dto.FyFaillogsAddDTO;
+import com.hb0730.boot.admin.project.fy.dto.FyFaillogsUpdateDTO;
 import com.hb0730.boot.admin.project.fy.dto.ListenOpenDTO;
 import com.hb0730.boot.admin.project.fy.entity.FyCourtInfors;
+import com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels;
+import com.hb0730.boot.admin.project.fy.entity.FyDeviceInfors;
 import com.hb0730.boot.admin.project.fy.qsc.QscUtil;
 import com.hb0730.boot.admin.project.fy.service.*;
 import com.hb0730.boot.admin.project.fy.vo.FailLogVo;
@@ -44,7 +47,7 @@ public class FyCourtInforsController {
     @GetMapping("/infos")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "获取法院列表", businessType = BusinessTypeEnum.DELETE)
-    public Result getInfoList() {
+    public Result<List<InfoListVo>> getInfoList() {
         List<InfoListVo> infoList = fyCourtInforsService.getInfoList();
         return R.success(infoList);
     }
@@ -52,21 +55,21 @@ public class FyCourtInforsController {
     @GetMapping("/remoteMonitoring/{id}")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "远程监听", businessType = BusinessTypeEnum.DELETE)
-    public Result remoteMonitoring(@PathVariable("id") String id) {
+    public Result<List<FyDeviceChannels>> remoteMonitoring(@PathVariable("id") String id) {
         return R.success(fyDeviceChannelsService.selectByDeviceId(id));
     }
 
     @GetMapping("/getDeviceUrl/{id}")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "获取设备Url", businessType = BusinessTypeEnum.DELETE)
-    public Result getDeviceUrl(@PathVariable("id") String id) {
+    public Result<List<FyDeviceInfors>> getDeviceUrl(@PathVariable("id") String id) {
         return R.success(fyCourtInforsService.getDeviceUrl(id));
     }
 
     @PostMapping("/getFailLogs/{id}")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "获取故障日志", businessType = BusinessTypeEnum.DELETE)
-    public Result getFailLogs(@PathVariable String id) {
+    public Result<List<FailLogVo>> getFailLogs(@PathVariable String id) {
         List<FailLogVo> failLogVos = fyFaillogsService.getLogs(id);
         return R.success(failLogVos);
     }
@@ -74,43 +77,53 @@ public class FyCourtInforsController {
     @PostMapping("/monitorErrorInput")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public Result monitorErrorInput(@RequestBody FyFaillogsAddDTO fyFaillogsAddDTO) {
+    public Result<String> monitorErrorInput(@RequestBody FyFaillogsAddDTO fyFaillogsAddDTO) {
         fyFaillogsService.create(fyFaillogsAddDTO);
+        return R.success();
+    }
+
+    @PostMapping("/processErrorInput")
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
+    @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
+    public Result<String> processErrorInput(@RequestBody FyFaillogsUpdateDTO fyFaillogsUpdateDTO) {
+        fyFaillogsService.process(fyFaillogsUpdateDTO);
         return R.success();
     }
 
     @PostMapping("/getCourtStatus")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public Result getCourtStatus() {
+    public Result<List<FyCourtInfors>> getCourtStatus() {
         return R.success(fyCourtInforsService.getCourtStatus());
     }
 
     @PostMapping("/getFailDevice/{courtId}")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public Result getFailDevice(@PathVariable String courtId) {
+    public Result<List<FyDeviceInfors>> getFailDevice(@PathVariable String courtId) {
         return R.success(fyDeviceInforsService.selectByCourtId(courtId));
     }
 
     @PostMapping("/listenOpen")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public Result listenOpen(@RequestBody ListenOpenDTO listenOpenDTO) {
-        return R.success(QscUtil.listenOpen(listenOpenDTO));
+    public Result<String> listenOpen(@RequestBody ListenOpenDTO listenOpenDTO) {
+        QscUtil.listenOpen(listenOpenDTO);
+        return R.success();
     }
 
     @PostMapping("/listenClose")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public Result listenClose(@RequestBody ListenOpenDTO listenOpenDTO) {
-        return R.success(QscUtil.listenClose());
+    public Result<String> listenClose(@RequestBody ListenOpenDTO listenOpenDTO) {
+        QscUtil.listenClose(listenOpenDTO);
+        return R.success();
     }
 
     @PostMapping("/failRepair/{courtId}")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public Result failRepair(@PathVariable String courtId) {
+    public Result<List<FailLogVo>> failRepair(@PathVariable String courtId) {
         return R.success(fyFaillogsService.failRepair(courtId));
     }
 

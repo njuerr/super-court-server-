@@ -2,8 +2,6 @@ package com.hb0730.boot.admin.project.fy.vo;
 
 import lombok.Data;
 
-import java.util.Date;
-
 /**
  * @program: boot-admin
  * @description:
@@ -34,8 +32,10 @@ public class FailLogVo {
     private String Processtime;
     private String courtId;
     private String reportUser;
+    private String reportUserName;
     private String processUser;
     private String failContent;
     private String deviceId;
+    private String deviceName;
     private String repair;
 }

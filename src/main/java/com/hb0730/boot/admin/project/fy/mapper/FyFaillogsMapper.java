@@ -2,9 +2,7 @@ package com.hb0730.boot.admin.project.fy.mapper;
 
 import com.hb0730.boot.admin.project.fy.entity.FyFaillogs;
 import com.hb0730.boot.admin.project.fy.vo.FailLogVo;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -28,6 +26,18 @@ public interface FyFaillogsMapper {
 
     int updateByPrimaryKeySelective(FyFaillogs record);
 
+    @Update("    update fy_faillogs\n" +
+        "    set failid = #{failid,jdbcType=LONGVARCHAR},\n" +
+        "      reporttime = #{reporttime,jdbcType=LONGVARCHAR},\n" +
+        "      processtime = #{processtime,jdbcType=LONGVARCHAR},\n" +
+        "      courtid = #{courtid,jdbcType=LONGVARCHAR},\n" +
+        "      reportuser = #{reportuser,jdbcType=LONGVARCHAR},\n" +
+        "      processuser = #{processuser,jdbcType=LONGVARCHAR},\n" +
+        "      failcontent = #{failcontent,jdbcType=LONGVARCHAR},\n" +
+        "      processcontent = #{processcontent,jdbcType=LONGVARCHAR},\n" +
+        "      deviceid = #{deviceid,jdbcType=LONGVARCHAR},\n" +
+        "      repair = #{repair,jdbcType=LONGVARCHAR}\n" +
+        "    where id = #{id,jdbcType=BIGINT}")
     int updateByPrimaryKey(FyFaillogs record);
 
     @Select("select ff.failid as failId,ff.reporttime as reportTime," +
@@ -38,6 +48,12 @@ public interface FyFaillogsMapper {
         "where ff.courtid = #{id}")
     List<FailLogVo> getLogs(String id);
 
-    @Select("select * from fy_faillogs where courtid=#{courtId} and repair= '0'")
-    List<FyFaillogs> failRepair(String courtId);
+    @Select("select ff.*,fdi.device_name as deviceName,tsui.nick_name as reportUserName from fy_faillogs ff "
+        + "left join fy_device_infors fdi on ff.deviceid = fdi.deviceid " +
+        "left join t_sys_user_info tsui on ff.reportuser = tsui.id " +
+        "where ff.courtid=#{courtId} and ff.repair= '0' order by ff.reporttime desc")
+    List<FailLogVo> failRepair(String courtId);
+
+    @Select("select  * from fy_faillogs where failid=#{failId}")
+    FyFaillogs selectByFailId(@Param("failId") String failId);
 }

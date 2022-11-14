@@ -2,6 +2,7 @@ package com.hb0730.boot.admin.project.fy.service;
 
 import com.hb0730.boot.admin.commons.utils.DateUtils;
 import com.hb0730.boot.admin.project.fy.dto.FyFaillogsAddDTO;
+import com.hb0730.boot.admin.project.fy.dto.FyFaillogsUpdateDTO;
 import com.hb0730.boot.admin.project.fy.entity.FyFaillogs;
 import com.hb0730.boot.admin.project.fy.mapper.FyFaillogsMapper;
 import com.hb0730.boot.admin.project.fy.vo.FailLogVo;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @Service
@@ -36,8 +38,8 @@ public class FyFaillogsService {
         fyFaillogs.setCourtid(fyFaillogsAddDTO.getCourtId());
         fyFaillogs.setFailid(UUID.randomUUID().toString());
         fyFaillogs.setFailcontent(fyFaillogsAddDTO.getErrorInput());
-        fyFaillogs.setReporttime(DateUtils.format("yyyy-MM-dd HH:mm:ss",new Date()));
-        fyFaillogs.setReportuser(SecurityUtils.getCurrentUser().getId().toString());
+        fyFaillogs.setReporttime(DateUtils.format("yyyy-MM-dd HH:mm:ss", new Date()));
+        fyFaillogs.setReportuser(Objects.requireNonNull(SecurityUtils.getCurrentUser()).getId().toString());
         return insert(fyFaillogs);
     }
 
@@ -65,7 +67,16 @@ public class FyFaillogsService {
         return fyFaillogsMapper.getLogs(id);
     }
 
-    public List<FyFaillogs> failRepair(String courtId) {
+    public List<FailLogVo> failRepair(String courtId) {
         return fyFaillogsMapper.failRepair(courtId);
+    }
+
+    public void process(FyFaillogsUpdateDTO fyFaillogsUpdateDTO) {
+        FyFaillogs fyFaillogs = fyFaillogsMapper.selectByFailId(fyFaillogsUpdateDTO.getFailId());
+        fyFaillogs.setRepair("1");
+        fyFaillogs.setProcesstime(DateUtils.format("yyyy-MM-dd HH:mm:ss", new Date()));
+        fyFaillogs.setProcessuser(Objects.requireNonNull(SecurityUtils.getCurrentUser()).getId().toString());
+        fyFaillogs.setProcesscontent(fyFaillogsUpdateDTO.getProcessContent());
+        updateByPrimaryKey(fyFaillogs);
     }
 }

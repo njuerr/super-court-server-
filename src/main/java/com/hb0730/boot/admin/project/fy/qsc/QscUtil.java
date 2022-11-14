@@ -10,14 +10,12 @@ import com.hb0730.boot.admin.project.fy.dto.ListenOpenDTO;
  **/
 public class QscUtil {
 
-    public static Object listenOpen(ListenOpenDTO listenOpenDTO) {
+    public static void listenOpen(ListenOpenDTO listenOpenDTO) {
         //todo
-        return null;
     }
 
-    public static Object listenClose() {
+    public static void listenClose(ListenOpenDTO listenOpenDTO) {
         // todo
-        return null;
     }
 
     public static void devicePosition(String courtId) {
