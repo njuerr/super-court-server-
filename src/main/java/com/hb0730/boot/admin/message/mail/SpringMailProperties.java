@@ -11,8 +11,7 @@ import java.util.Map;
 /**
  * Spring mail properties
  *
- * @author <a href="mailto:huangbing0730@gmail">hb0730</a>
- * @date 2022/7/9
+ * @author Administrator
  */
 @Data
 @ToString

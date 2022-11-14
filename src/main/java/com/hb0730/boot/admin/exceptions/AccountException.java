@@ -7,7 +7,7 @@ import lombok.NonNull;
 /**
  * 用户账号信息
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class AccountException extends AbstractException {

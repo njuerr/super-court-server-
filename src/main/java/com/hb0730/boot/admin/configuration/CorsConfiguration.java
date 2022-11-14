@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 跨域
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Configuration

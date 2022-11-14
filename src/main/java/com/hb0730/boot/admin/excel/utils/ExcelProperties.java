@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * excel properties
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Data

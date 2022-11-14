@@ -22,7 +22,7 @@ import java.util.TimerTask;
 /**
  * 异步工厂（产生任务用）
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class AsyncFactory {

@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 /**
  * mybatis-plus 配置
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Configuration

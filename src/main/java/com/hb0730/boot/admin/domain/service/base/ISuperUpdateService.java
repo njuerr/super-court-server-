@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @param <DTO> 显示层对象类型
  * @param <ID>  id类型
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface ISuperUpdateService<ID extends Serializable, DTO extends BaseDTO> {

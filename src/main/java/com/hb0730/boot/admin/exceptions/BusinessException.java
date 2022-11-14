@@ -3,7 +3,7 @@ package com.hb0730.boot.admin.exceptions;
 /**
  * 业务异常
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class BusinessException extends RuntimeException {

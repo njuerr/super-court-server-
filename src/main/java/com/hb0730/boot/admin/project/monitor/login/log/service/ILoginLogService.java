@@ -8,7 +8,7 @@ import com.hb0730.boot.admin.project.monitor.login.log.model.query.LoginLogParam
 /**
  * 登录日志  服务类
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface ILoginLogService extends ISuperBaseService<Long, LoginLogParams, LoginLogDTO, LoginLogEntity> {

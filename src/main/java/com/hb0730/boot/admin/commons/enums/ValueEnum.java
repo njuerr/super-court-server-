@@ -6,7 +6,7 @@ import java.util.stream.Stream;
  * 获取枚举值
  *
  * @param <T> 值类型
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface ValueEnum<T> {

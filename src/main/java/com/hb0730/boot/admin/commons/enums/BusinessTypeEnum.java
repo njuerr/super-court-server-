@@ -5,7 +5,7 @@ import lombok.Getter;
 /**
  * 业务操作类型
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public enum BusinessTypeEnum implements ValueEnum<Integer> {

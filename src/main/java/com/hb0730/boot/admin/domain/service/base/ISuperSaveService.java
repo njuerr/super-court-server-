@@ -7,7 +7,7 @@ import org.springframework.lang.NonNull;
  * 扩展MybatisPlus保存，针对{@link com.hb0730.boot.admin.domain.controller.base.IBaseSaveController}
  *
  * @param <DTO> 显示层对象类型
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface ISuperSaveService<DTO extends BaseDTO> {

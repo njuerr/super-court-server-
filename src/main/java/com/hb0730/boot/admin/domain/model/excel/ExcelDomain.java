@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Excel 读写实体
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class ExcelDomain implements Serializable {

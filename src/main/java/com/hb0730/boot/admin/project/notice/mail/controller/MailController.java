@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * mail controller
  *
- * @author bing_huang
+ * @author Administrator
  */
 @RestController()
 @RequestMapping("/message/mail")

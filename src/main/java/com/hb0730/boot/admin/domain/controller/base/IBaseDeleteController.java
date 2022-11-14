@@ -29,7 +29,7 @@ import java.util.List;
  *
  * @param <ID>     id类型
  * @param <ENTITY> 实体类型
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface IBaseDeleteController<ID extends Serializable, ENTITY extends BaseDomain> extends IBaseController<ENTITY> {

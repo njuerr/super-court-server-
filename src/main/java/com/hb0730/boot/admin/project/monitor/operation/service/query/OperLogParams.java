@@ -1,4 +1,4 @@
-package com.hb0730.boot.admin.project.monitor.operation.model.query;
+package com.hb0730.boot.admin.project.monitor.operation.service.query;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.hb0730.boot.admin.domain.model.query.BaseParams;

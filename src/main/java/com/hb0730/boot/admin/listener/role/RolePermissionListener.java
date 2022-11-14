@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 /**
  * 角色权限监听,用于刷新用户权限
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @Component

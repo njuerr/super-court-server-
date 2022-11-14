@@ -15,8 +15,7 @@ import java.util.Optional;
 /**
  * 数据字典
  *
- * @author bing_huang
- * @since 3.0.0
+ * @author Administrator
  */
 public class DictUtils {
 

@@ -7,13 +7,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+
 /**
- * 属性字段
- *
- * @author bing_huang
- * @see FieldInfo
- * @see FieldInfoAspectj
- * @since 3.0.0
+ * @author Administrator
  */
 @Retention(value = RetentionPolicy.RUNTIME)
 @Target(value = ElementType.TYPE)

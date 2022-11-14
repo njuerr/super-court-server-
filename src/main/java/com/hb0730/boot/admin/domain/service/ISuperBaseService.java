@@ -24,7 +24,7 @@ import java.io.Serializable;
  * @param <PARAMS> 请求参数类型
  * @param <DTO>    显示层对象类型
  * @param <ENTITY> 实体类型
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public interface ISuperBaseService<ID extends Serializable, PARAMS extends BaseParams, DTO extends BaseDTO, ENTITY extends BaseDomain>

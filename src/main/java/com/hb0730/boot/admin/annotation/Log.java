@@ -4,11 +4,10 @@ import com.hb0730.boot.admin.commons.enums.BusinessTypeEnum;
 
 import java.lang.annotation.*;
 
+
 /**
- * 日记记录
- *
- * @author bing_huang
- * @since 3.0.0
+ * 操作日志
+ * @author Administrator
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

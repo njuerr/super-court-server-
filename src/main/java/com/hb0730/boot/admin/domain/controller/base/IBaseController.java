@@ -11,7 +11,7 @@ import com.hb0730.boot.admin.domain.service.ISuperBaseService;
  * </pre>
  *
  * @param <ENTITY> 实体类型
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 @SuppressWarnings({"rawtypes"})

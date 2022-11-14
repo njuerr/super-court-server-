@@ -5,7 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 /**
  * 密码加密
  *
- * @author bing_huang
+ * @author Administrator
  */
 public class PasswordSecurityUtils {
 

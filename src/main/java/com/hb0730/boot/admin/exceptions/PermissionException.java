@@ -7,7 +7,7 @@ import lombok.NonNull;
 /**
  * 无权限异常
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class PermissionException extends AbstractException {

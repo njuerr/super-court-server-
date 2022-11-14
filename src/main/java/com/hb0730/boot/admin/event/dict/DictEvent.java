@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationEvent;
 /**
  * 数据字典event
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class DictEvent extends ApplicationEvent {

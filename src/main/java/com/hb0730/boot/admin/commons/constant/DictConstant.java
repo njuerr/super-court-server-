@@ -3,7 +3,7 @@ package com.hb0730.boot.admin.commons.constant;
 /**
  * 字典常量
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class DictConstant {

@@ -11,9 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author bing_huang
- * @date 2020/07/07 8:42
- * @since V1.0
+ * @author Administrator
  */
 public interface PropertyEnum extends ValueEnum<String> {
     /**

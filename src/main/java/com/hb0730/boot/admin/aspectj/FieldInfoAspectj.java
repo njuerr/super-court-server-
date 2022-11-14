@@ -11,9 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author bing_huang
- */
+
 public class FieldInfoAspectj {
 
     /**

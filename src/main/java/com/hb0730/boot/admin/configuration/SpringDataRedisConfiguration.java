@@ -16,7 +16,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 /**
  * Spring data Redis
  *
- * @author bing_huang
+ * @author Administrator
  */
 @Configuration
 @ConditionalOnClass(RedisOperations.class)

@@ -3,7 +3,7 @@ package com.hb0730.boot.admin.commons.enums;
 /**
  * email properties
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public enum EmailPropertiesEnum implements PropertyEnum {
