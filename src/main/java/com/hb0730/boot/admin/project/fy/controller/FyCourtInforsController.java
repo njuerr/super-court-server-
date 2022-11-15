@@ -10,15 +10,21 @@ import com.hb0730.boot.admin.project.fy.dto.ListenOpenDTO;
 import com.hb0730.boot.admin.project.fy.entity.FyCourtInfors;
 import com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels;
 import com.hb0730.boot.admin.project.fy.entity.FyDeviceInfors;
+import com.hb0730.boot.admin.project.fy.entity.FyDownFiles;
 import com.hb0730.boot.admin.project.fy.qsc.HttpRes;
 import com.hb0730.boot.admin.project.fy.qsc.QscUtil;
 import com.hb0730.boot.admin.project.fy.service.*;
+import com.hb0730.boot.admin.project.fy.util.DownLoadUtil;
 import com.hb0730.boot.admin.project.fy.vo.FailLogVo;
 import com.hb0730.boot.admin.project.fy.vo.InfoListVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.net.http.HttpRequest;
 import java.util.List;
 
 /**
@@ -46,6 +52,8 @@ public class FyCourtInforsController {
 
     @Autowired
     private QscUtil qscUtil;
+    @Autowired
+    private DownLoadUtil downLoadUtil;
 
 
     @GetMapping("/infos")
@@ -126,8 +134,8 @@ public class FyCourtInforsController {
     @PostMapping("/downloadFile/{courtId}")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public void downloadFile(@PathVariable String courtId) {
-        fyDownFilesService.downloadFile(courtId);
+    public Result<List<FyDownFiles>> downloadFile(@PathVariable String courtId) {
+      return R.success(fyDownFilesService.downloadFile(courtId));
     }
 
     @PostMapping("/devicePosition/{courtId}")
@@ -141,16 +149,27 @@ public class FyCourtInforsController {
     public Result<String> indexGetFaultLine() {
         return R.success(qscUtil.IndexGetFaultLine());
     }
+
     @GetMapping("/big/indexGetOnLineTime")
     public Result<String> indexGetOnLineTime() {
         return R.success(qscUtil.indexGetOnLineTime());
     }
+
     @GetMapping("/big/getCourtInfo")
     public Result<String> getCourtInfo() {
         return R.success(qscUtil.getCourtInfo());
     }
+
     @GetMapping("/big/getZoneInfo")
     public Result<String> getZoneInfo() {
         return R.success(qscUtil.getZoneInfo());
     }
+
+    @GetMapping("/download")
+    public String downLoad(String fileName, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        downLoadUtil.downloadFile(request, response,fileName);
+        return "正在下载";
+    }
+
+
 }

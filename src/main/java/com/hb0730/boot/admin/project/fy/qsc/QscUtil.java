@@ -1,16 +1,10 @@
 package com.hb0730.boot.admin.project.fy.qsc;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.hb0730.boot.admin.project.fy.dto.ListenOpenDTO;
-import lombok.Data;
-import okhttp3.*;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @program: boot-admin
@@ -87,4 +81,13 @@ public class QscUtil {
         }
         return s;
     }
+
+    public static void getGlobalData() {
+        try {
+           HttpRequestUtil.sendGet("http://localhost:8090/demo5", "");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

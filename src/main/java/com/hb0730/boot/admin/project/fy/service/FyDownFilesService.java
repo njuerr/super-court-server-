@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 import com.hb0730.boot.admin.project.fy.mapper.FyDownFilesMapper;
+
+import java.util.List;
+
 @Service
 public class FyDownFilesService{
 
@@ -41,7 +44,7 @@ public class FyDownFilesService{
         return fyDownFilesMapper.updateByPrimaryKey(record);
     }
 
-    public void downloadFile(String courtId) {
-        // todo
+    public List<FyDownFiles>  downloadFile(String courtId) {
+        return fyDownFilesMapper.selectByCourtId(courtId);
     }
 }
