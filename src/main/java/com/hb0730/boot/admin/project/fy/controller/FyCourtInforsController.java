@@ -10,6 +10,7 @@ import com.hb0730.boot.admin.project.fy.dto.ListenOpenDTO;
 import com.hb0730.boot.admin.project.fy.entity.FyCourtInfors;
 import com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels;
 import com.hb0730.boot.admin.project.fy.entity.FyDeviceInfors;
+import com.hb0730.boot.admin.project.fy.qsc.HttpRes;
 import com.hb0730.boot.admin.project.fy.qsc.QscUtil;
 import com.hb0730.boot.admin.project.fy.service.*;
 import com.hb0730.boot.admin.project.fy.vo.FailLogVo;
@@ -43,6 +44,9 @@ public class FyCourtInforsController {
     @Autowired
     private FyDownFilesService fyDownFilesService;
 
+    @Autowired
+    private QscUtil qscUtil;
+
 
     @GetMapping("/infos")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
@@ -52,10 +56,10 @@ public class FyCourtInforsController {
         return R.success(infoList);
     }
 
-    @GetMapping("/remoteMonitoring/{id}")
+    @GetMapping("/getChannls/{id}")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
-    @Log(value = "远程监听", businessType = BusinessTypeEnum.DELETE)
-    public Result<List<FyDeviceChannels>> remoteMonitoring(@PathVariable("id") String id) {
+    @Log(value = "获取通道", businessType = BusinessTypeEnum.DELETE)
+    public Result<List<FyDeviceChannels>> getChannls(@PathVariable("id") String id) {
         return R.success(fyDeviceChannelsService.selectByDeviceId(id));
     }
 
@@ -107,17 +111,9 @@ public class FyCourtInforsController {
     @PostMapping("/listenOpen")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public Result<String> listenOpen(@RequestBody ListenOpenDTO listenOpenDTO) {
-        QscUtil.listenOpen(listenOpenDTO);
-        return R.success();
-    }
-
-    @PostMapping("/listenClose")
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
-    @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public Result<String> listenClose(@RequestBody ListenOpenDTO listenOpenDTO) {
-        QscUtil.listenClose(listenOpenDTO);
-        return R.success();
+    public Result<HttpRes> listenOpen(@RequestBody ListenOpenDTO listenOpenDTO) {
+        HttpRes httpRes = qscUtil.listenOpen(listenOpenDTO);
+        return R.success(httpRes);
     }
 
     @PostMapping("/failRepair/{courtId}")
@@ -137,8 +133,8 @@ public class FyCourtInforsController {
     @PostMapping("/devicePosition/{courtId}")
     @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
     @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public void devicePosition(@PathVariable String courtId) {
-        QscUtil.devicePosition(courtId);
+    public Result<HttpRes> devicePosition(@PathVariable String courtId) {
+        return R.success(qscUtil.devicePosition(courtId));
     }
 
 }
