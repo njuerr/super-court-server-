@@ -71,6 +71,10 @@ public class WebSecurityConfiguration {
             .authorizeRequests()
             //对于登录login  开放
             .antMatchers("/auth/**", "/favicon.ico").permitAll()
+            .antMatchers("/fy/court/big/indexGetFaultLine").permitAll()
+            .antMatchers("/fy/court/big/indexGetOnLineTime").permitAll()
+            .antMatchers("/fy/court/big/getCourtInfo").permitAll()
+            .antMatchers("/fy/court/big/getZoneInfo").permitAll()
             // options 开放
             .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
             // 其余认证访问

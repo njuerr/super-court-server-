@@ -38,4 +38,53 @@ public class QscUtil {
             return new HttpRes();
         }
     }
+    public static void main(String[] args) {
+        String s = null;
+        try {
+            s = HttpRequestUtil.sendGet("http://localhost:8090/IndexGetFaultLine", "");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(s);
+    }
+
+    public String IndexGetFaultLine(){
+        String s = null;
+        try {
+            s = HttpRequestUtil.sendGet("http://localhost:8090/IndexGetFaultLine", "");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+       return s;
+    }
+
+    public String indexGetOnLineTime() {
+        String s = null;
+        try {
+            s = HttpRequestUtil.sendGet("http://localhost:8090/IndexGetOnLineTime", "");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return s;
+    }
+
+    public String getCourtInfo() {
+        String s = null;
+        try {
+            s = HttpRequestUtil.sendGet("http://localhost:8090/GetCourtInfo", "");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return s;
+    }
+
+    public String getZoneInfo() {
+        String s = null;
+        try {
+            s = HttpRequestUtil.sendGet("http://localhost:8090/GetZoneInfo", "");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return s;
+    }
 }

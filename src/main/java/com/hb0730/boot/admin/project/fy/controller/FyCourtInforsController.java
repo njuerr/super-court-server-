@@ -137,4 +137,20 @@ public class FyCourtInforsController {
         return R.success(qscUtil.devicePosition(courtId));
     }
 
+    @GetMapping("/big/indexGetFaultLine")
+    public Result<String> indexGetFaultLine() {
+        return R.success(qscUtil.IndexGetFaultLine());
+    }
+    @GetMapping("/big/indexGetOnLineTime")
+    public Result<String> indexGetOnLineTime() {
+        return R.success(qscUtil.indexGetOnLineTime());
+    }
+    @GetMapping("/big/getCourtInfo")
+    public Result<String> getCourtInfo() {
+        return R.success(qscUtil.getCourtInfo());
+    }
+    @GetMapping("/big/getZoneInfo")
+    public Result<String> getZoneInfo() {
+        return R.success(qscUtil.getZoneInfo());
+    }
 }
