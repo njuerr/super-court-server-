@@ -145,6 +145,13 @@ public class FyCourtInforsController {
         return R.success(qscUtil.devicePosition(courtId));
     }
 
+//    @PostMapping("/getMeter/{courtId}")
+//    @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
+//    @Log(value = "获取当前法院meter", businessType = BusinessTypeEnum.DELETE)
+//    public Result<HttpRes> devicePosition(@PathVariable String courtId) {
+//        return R.success(qscUtil.devicePosition(courtId));
+//    }
+
     @GetMapping("/big/indexGetFaultLine")
     public Result<String> indexGetFaultLine() {
         return R.success(qscUtil.IndexGetFaultLine());

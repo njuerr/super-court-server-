@@ -1,5 +1,6 @@
 package com.hb0730.boot.admin.project.fy.qsc;
 
+import com.alibaba.fastjson.JSON;
 import com.google.gson.Gson;
 import com.hb0730.boot.admin.project.fy.dto.ListenOpenDTO;
 import org.springframework.stereotype.Component;
@@ -40,7 +41,7 @@ public class QscUtil {
     public static void main(String[] args) {
         String s = null;
         try {
-            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg="+"{\"jsonrpc\":\"2.0\",\"id\":1234,\"method\":\"Component.Set\",\"params\":{\"Name\":\"web_remoteMonitor_001\",\"Controls\":[{\"Name\":\"coreIdentify\",\"Value\":1}]}}");
+            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg="+JSON.toJSONString(new MaterRequestVO()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

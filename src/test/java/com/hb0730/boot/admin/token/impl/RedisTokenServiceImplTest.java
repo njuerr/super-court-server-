@@ -1,7 +1,9 @@
 package com.hb0730.boot.admin.token.impl;
 
+import io.netty.util.internal.SocketUtils;
 import org.junit.Test;
 
+import java.net.InetSocketAddress;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetAddress;
@@ -60,5 +62,6 @@ public class RedisTokenServiceImplTest {
                 socket.close();
             } catch (Exception e2) {}
         }
+
     }
 }
