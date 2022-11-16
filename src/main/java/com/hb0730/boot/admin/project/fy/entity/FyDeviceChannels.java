@@ -2,6 +2,9 @@ package com.hb0730.boot.admin.project.fy.entity;
 
 import lombok.Data;
 
+/**
+ * @author Administrator
+ */
 @Data
 public class FyDeviceChannels {
     private Long id;
