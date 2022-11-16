@@ -35,14 +35,23 @@ public class QscUtil {
             return new HttpRes();
         }
     }
+
+
     public static void main(String[] args) {
         String s = null;
         try {
-            s = HttpRequestUtil.sendGet("http://localhost:8090/IndexGetFaultLine", "");
+            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg="+"{\"jsonrpc\":\"2.0\",\"id\":1234,\"method\":\"Component.Set\",\"params\":{\"Name\":\"web_remoteMonitor_001\",\"Controls\":[{\"Name\":\"coreIdentify\",\"Value\":1}]}}");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         System.out.println(s);
+
+//        try {
+//            String s = HttpRequestUtil.sendGet("http:localhost:8090/demo2", "courtId=" + 1);
+//            System.out.println(s);
+//        } catch (IOException e) {
+//            System.out.println(e);
+//        }
     }
 
     public String IndexGetFaultLine(){
