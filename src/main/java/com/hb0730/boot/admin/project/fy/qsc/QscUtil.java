@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.hb0730.boot.admin.project.fy.dto.ListenOpenDTO;
+import com.hb0730.boot.admin.project.fy.service.FyDeviceChannelsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -21,7 +23,8 @@ import java.util.List;
  **/
 @Component
 public class QscUtil {
-
+    @Autowired
+    private FyDeviceChannelsService fyDeviceChannelsService;
     public HttpRes listenOpen(ListenOpenDTO listenOpenDTO) {
         try {
             String s = HttpRequestUtil.sendPost("http:localhost:8090/remoteListen", new Gson().toJson(listenOpenDTO));
@@ -43,10 +46,11 @@ public class QscUtil {
     public MaterRes getMeter(String courtId) {
         String s = null;
         try {
+            List<String> mater = fyDeviceChannelsService.getMater(courtId);
             MaterRes materRes = new MaterRes();
             List<String> names= new ArrayList<>();
             List<Double> values= new ArrayList<>();
-            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO()));
+            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO(mater,courtId)));
             HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
             MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
             List<MeterResChanges> changes = materResControls.getParams().getChanges();
@@ -64,14 +68,14 @@ public class QscUtil {
 
 
     public static void main(String[] args) {
-        String s = null;
-        try {
-            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO()));
-            HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
-            MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+//        String s = null;
+//        try {
+//            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO()));
+//            HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
+//            MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
 
 //        try {
 //            String s = HttpRequestUtil.sendGet("http:localhost:8090/demo2", "courtId=" + 1);
