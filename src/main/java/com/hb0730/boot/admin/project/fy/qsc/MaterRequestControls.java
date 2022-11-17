@@ -7,7 +7,10 @@ import lombok.Data;
 public class MaterRequestControls {
     @JSONField(name = "Name")
     private String Name;
-    public MaterRequestControls(String name){
+    @JSONField(name = "Value")
+    private String Value;
+    public MaterRequestControls(String name,String value){
         this.Name =name;
+        this.Value=value;
     }
 }

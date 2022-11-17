@@ -12,24 +12,22 @@ public class MaterRequestVO {
     private String method;
     private MaterRequestParams params;
 
-    public MaterRequestVO(List<String> meterList,String courtId){
-        this.jsonrpc ="2.0";
-        this.id=1234;
-        this.method ="ChangeGroup.AddComponentControl";
-        String court= "";
-        if (courtId.length()==1){
-            court = "00"+courtId;
-        }else {
-            court = "0"+courtId;
+    public MaterRequestVO(String courtId, String channel) {
+        this.jsonrpc = "2.0";
+        this.id = 1234;
+        this.method = "ChangeGroup.AddComponentControl";
+        String court = "";
+        if (courtId.length() == 1) {
+            court = "00" + courtId;
+        } else {
+            court = "0" + courtId;
         }
-        MaterRequestParams materRequestParams = new MaterRequestParams();
-        materRequestParams.setId("changegroup_3");
-        MaterRequestComponent component = new MaterRequestComponent();
-        component.setName("web_remoteMonitor_"+court);
+        MaterRequestParams params = new MaterRequestParams();
+        params.setName("web_remoteMonitor_" + court);
         List<MaterRequestControls> materRequestControls = new ArrayList<>();
-        meterList.forEach(i ->{
-            materRequestControls.add( new MaterRequestControls(i));
-        });
+        materRequestControls.add(new MaterRequestControls("channelSelect", channel));
+        params.setControls(materRequestControls);
+        this.params = params;
 //        MaterRequestControls controls = new MaterRequestControls("meter 1");
 //        MaterRequestControls controls2 = new MaterRequestControls("meter 2");
 //        MaterRequestControls controls3 = new MaterRequestControls("meter 3");
@@ -62,8 +60,6 @@ public class MaterRequestVO {
 //        materRequestControls.add(controls14);
 //        materRequestControls.add(controls15);
 //        materRequestControls.add(controls16);
-        component.setControls(materRequestControls);
-        materRequestParams.setComponent(component);
-        this.params =materRequestParams;
+//        component.setControls(materRequestControls);
     }
 }

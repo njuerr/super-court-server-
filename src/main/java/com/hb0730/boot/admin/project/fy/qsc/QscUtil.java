@@ -25,6 +25,7 @@ import java.util.List;
 public class QscUtil {
     @Autowired
     private FyDeviceChannelsService fyDeviceChannelsService;
+
     public HttpRes listenOpen(ListenOpenDTO listenOpenDTO) {
         try {
             String s = HttpRequestUtil.sendPost("http:localhost:8090/remoteListen", new Gson().toJson(listenOpenDTO));
@@ -43,43 +44,43 @@ public class QscUtil {
         }
     }
 
-    public MaterRes getMeter(String courtId) {
-        String s = null;
-        try {
-            List<String> mater = fyDeviceChannelsService.getMater(courtId);
-            MaterRes materRes = new MaterRes();
-            List<String> names= new ArrayList<>();
-            List<Double> values= new ArrayList<>();
-            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO(mater,courtId)));
-            HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
-            System.out.println(httpRes.getMsg());
-            MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
-            List<MeterResChanges> changes = materResControls.getParams().getChanges();
-            changes.forEach(i->{
-                names.add(fyDeviceChannelsService.getChannelName(i.getName(),courtId));
-                values.add(i.getValue());
-            });
-            materRes.setValues(values);
-            materRes.setNames(names);
-            return materRes;
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-    public static void main(String[] args) {
+//    public MaterRes getMeter(String courtId) {
 //        String s = null;
 //        try {
-//            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO()));
+//            List<String> mater = fyDeviceChannelsService.getMater(courtId);
+//            MaterRes materRes = new MaterRes();
+//            List<String> names= new ArrayList<>();
+//            List<Double> values= new ArrayList<>();
+//            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO(mater,courtId)));
 //            HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
-//                   MaterResControls materResControls = JSONObject.parseObject("", MaterResControls.class);
+//            System.out.println(httpRes.getMsg());
+//            MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
+//            List<MeterResChanges> changes = materResControls.getParams().getChanges();
+//            changes.forEach(i->{
+//                names.add(fyDeviceChannelsService.getChannelName(i.getName(),courtId));
+//                values.add(i.getValue());
+//            });
+//            materRes.setValues(values);
+//            materRes.setNames(names);
+//            return materRes;
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
 //        }
+//    }
 
-        MaterResControls materResControls = JSONObject.parseObject("{\"jsonrpc\":\"2.0\",\"method\":\"ChangeGroup.Poll\",\"params\":{\"Id\":\"changegroup_3\",\"Changes\":[{\"Component\":\"web_remoteMonitor_001\",\"Name\":\"meter 12\",\"String\":\"-79.3dB\",\"Value\":-79.3430252,\"Position\":0.0,\"Choices\":[],\"Color\":\"\",\"Indeterminate\":false,\"Invisible\":false,\"Disabled\":false,\"Legend\":\"\"}]}} ", MaterResControls.class);
-        materResControls.getParams();
+
+    public static void main(String[] args) {
+        String s = null;
+        try {
+            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO("1", "8")));
+            HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
+            System.out.println(httpRes);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+//        MaterResControls materResControls = JSONObject.parseObject("{\"jsonrpc\":\"2.0\",\"method\":\"ChangeGroup.Poll\",\"params\":{\"Id\":\"changegroup_3\",\"Changes\":[{\"Component\":\"web_remoteMonitor_001\",\"Name\":\"meter 12\",\"String\":\"-79.3dB\",\"Value\":-79.3430252,\"Position\":0.0,\"Choices\":[],\"Color\":\"\",\"Indeterminate\":false,\"Invisible\":false,\"Disabled\":false,\"Legend\":\"\"}]}} ", MaterResControls.class);
+//        materResControls.getParams();
 
 
 //        try {

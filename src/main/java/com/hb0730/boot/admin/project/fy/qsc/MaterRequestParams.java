@@ -3,10 +3,13 @@ package com.hb0730.boot.admin.project.fy.qsc;
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class MaterRequestParams {
-    @JSONField(name = "Id")
-    private String Id;
-    @JSONField(name = "Component")
-    private MaterRequestComponent Component;
+    @JSONField(name = "Name")
+    private String Name;
+    @JSONField(name = "Controls")
+//    private MaterRequestComponent Component;
+    private List<MaterRequestControls> Controls;
 }
