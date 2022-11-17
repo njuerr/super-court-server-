@@ -52,6 +52,7 @@ public class QscUtil {
             List<Double> values= new ArrayList<>();
             s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO(mater,courtId)));
             HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
+            System.out.println(httpRes.getMsg());
             MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
             List<MeterResChanges> changes = materResControls.getParams().getChanges();
             changes.forEach(i->{
@@ -72,10 +73,14 @@ public class QscUtil {
 //        try {
 //            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO()));
 //            HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
-//            MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
+//                   MaterResControls materResControls = JSONObject.parseObject("", MaterResControls.class);
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
 //        }
+
+        MaterResControls materResControls = JSONObject.parseObject("{\"jsonrpc\":\"2.0\",\"method\":\"ChangeGroup.Poll\",\"params\":{\"Id\":\"changegroup_3\",\"Changes\":[{\"Component\":\"web_remoteMonitor_001\",\"Name\":\"meter 12\",\"String\":\"-79.3dB\",\"Value\":-79.3430252,\"Position\":0.0,\"Choices\":[],\"Color\":\"\",\"Indeterminate\":false,\"Invisible\":false,\"Disabled\":false,\"Legend\":\"\"}]}} ", MaterResControls.class);
+        materResControls.getParams();
+
 
 //        try {
 //            String s = HttpRequestUtil.sendGet("http:localhost:8090/demo2", "courtId=" + 1);
