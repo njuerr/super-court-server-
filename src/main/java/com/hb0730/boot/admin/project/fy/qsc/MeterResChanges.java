@@ -20,7 +20,7 @@ public class MeterResChanges {
     @JSONField(name = "String")
     private String String;
     @JSONField(name = "Value")
-    private String Value;
+    private Double Value;
     @JSONField(name = "Position")
     private Integer Position;
     @JSONField(name = "Choices")
