@@ -56,7 +56,7 @@ public class QscUtil {
             MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
             List<MeterResChanges> changes = materResControls.getParams().getChanges();
             changes.forEach(i->{
-                names.add(i.getName());
+                names.add(fyDeviceChannelsService.getChannelName(i.getName(),courtId));
                 values.add(i.getValue());
             });
             materRes.setValues(values);

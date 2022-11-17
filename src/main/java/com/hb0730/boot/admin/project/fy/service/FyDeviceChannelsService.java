@@ -10,6 +10,7 @@ import com.hb0730.boot.admin.project.fy.mapper.FyDeviceChannelsMapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Service
 public class FyDeviceChannelsService{
@@ -61,5 +62,17 @@ public class FyDeviceChannelsService{
             res.add(i.getChannelCode());
         });
         return res;
+    }
+
+    public String getChannelName(String channelCode, String courtId){
+        List<FyDeviceInfors> fyDeviceInfors = fyDeviceInforsService.selectByCourtId(courtId);
+        List<FyDeviceChannels> fyDeviceChannels = fyDeviceChannelsMapper.selectByDeviceId(fyDeviceInfors.get(0).getDeviceid());
+        AtomicReference<String> channelName= new AtomicReference<>("");
+        fyDeviceChannels.forEach(i ->{
+           if (i.getChannelCode().equals(channelCode)){
+               channelName.set(i.getChannelName());
+           }
+        });
+        return channelName.get();
     }
 }
