@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @program: boot-admin
@@ -38,17 +40,35 @@ public class QscUtil {
         }
     }
 
+    public MaterRes getMeter(String courtId) {
+        String s = null;
+        try {
+            MaterRes materRes = new MaterRes();
+            List<String> names= new ArrayList<>();
+            List<Double> values= new ArrayList<>();
+            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO()));
+            HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
+            MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
+            List<MeterResChanges> changes = materResControls.getParams().getChanges();
+            changes.forEach(i->{
+                names.add(i.getName());
+                values.add(i.getValue());
+            });
+            materRes.setValues(values);
+            materRes.setNames(names);
+            return materRes;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     public static void main(String[] args) {
         String s = null;
         try {
-            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg="+JSON.toJSONString(new MaterRequestVO()));
+            s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg=" + JSON.toJSONString(new MaterRequestVO()));
             HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
-            System.out.println(httpRes.getMsg());
-//            MaterResControls materResControls = new Gson().fromJson(httpRes.getMsg(), MaterResControls.class);
-//            System.out.println(materResControls.getParams().getChanges().get(1).getName());
             MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
-            System.out.println(materResControls.getParams().getChanges().get(1).getName());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -61,14 +81,14 @@ public class QscUtil {
 //        }
     }
 
-    public String IndexGetFaultLine(){
+    public String IndexGetFaultLine() {
         String s = null;
         try {
             s = HttpRequestUtil.sendGet("http://localhost:8090/IndexGetFaultLine", "");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-       return s;
+        return s;
     }
 
     public String indexGetOnLineTime() {
@@ -102,37 +122,11 @@ public class QscUtil {
     }
 
     public static void getGlobalData() throws IOException {
-//        try {
-//           HttpRequestUtil.sendGet("http://localhost:8090/demo5", "");
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-        Socket sc = new Socket("10.0.0.201", 1710);
-        // 为了发送数据，应该获取socket中的输出流
-        OutputStream out = sc.getOutputStream();
-        String s = "{\n" +
-            "    \"jsonrpc\": \"2.0\",\n" +
-            "    \"id\": 1234,\n" +
-            "    \"method\": \"Component.Set\",\n" +
-            "    \"params\": {\n" +
-            "        \"Name\": \"web_remoteMonitor_001\",\n" +
-            "        \"Controls\": [\n" +
-            "            {\n" +
-            "                \"Name\": \"coreIdentify\",\n" +
-            "                \"Value\": 1\n" +
-            "            }\n" +
-            "        ]\n" +
-            "    }\n" +
-            "}\\x00";
-        // write接收字节数据
-        out.write(s.getBytes());
-
-        InputStream is = sc.getInputStream();
-
-        byte[] by = new byte[1024];
-        int len = is.read(by);//read没读到数据会监听等待
-        System.out.println(new String(by, 0 ,len));
-        sc.close();
+        try {
+            HttpRequestUtil.sendGet("http://localhost:8090/demo5", "");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

@@ -12,6 +12,7 @@ import com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels;
 import com.hb0730.boot.admin.project.fy.entity.FyDeviceInfors;
 import com.hb0730.boot.admin.project.fy.entity.FyDownFiles;
 import com.hb0730.boot.admin.project.fy.qsc.HttpRes;
+import com.hb0730.boot.admin.project.fy.qsc.MaterRes;
 import com.hb0730.boot.admin.project.fy.qsc.QscUtil;
 import com.hb0730.boot.admin.project.fy.service.*;
 import com.hb0730.boot.admin.project.fy.util.DownLoadUtil;
@@ -143,6 +144,13 @@ public class FyCourtInforsController {
     @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
     public Result<HttpRes> devicePosition(@PathVariable String courtId) {
         return R.success(qscUtil.devicePosition(courtId));
+    }
+
+    @PostMapping("/getMeter/{courtId}")
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
+    @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
+    public Result<MaterRes> getMeter(@PathVariable String courtId) {
+        return R.success(qscUtil.getMeter(courtId));
     }
 
 //    @PostMapping("/getMeter/{courtId}")
