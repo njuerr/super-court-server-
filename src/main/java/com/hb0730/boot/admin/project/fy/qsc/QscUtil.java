@@ -1,6 +1,7 @@
 package com.hb0730.boot.admin.project.fy.qsc;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.hb0730.boot.admin.project.fy.dto.ListenOpenDTO;
 import org.springframework.stereotype.Component;
@@ -42,10 +43,15 @@ public class QscUtil {
         String s = null;
         try {
             s = HttpRequestUtil.sendGet("http://localhost:8090/send", "msg="+JSON.toJSONString(new MaterRequestVO()));
+            HttpRes httpRes = new Gson().fromJson(s, HttpRes.class);
+            System.out.println(httpRes.getMsg());
+//            MaterResControls materResControls = new Gson().fromJson(httpRes.getMsg(), MaterResControls.class);
+//            System.out.println(materResControls.getParams().getChanges().get(1).getName());
+            MaterResControls materResControls = JSONObject.parseObject(httpRes.getMsg(), MaterResControls.class);
+            System.out.println(materResControls.getParams().getChanges().get(1).getName());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(s);
 
 //        try {
 //            String s = HttpRequestUtil.sendGet("http:localhost:8090/demo2", "courtId=" + 1);
