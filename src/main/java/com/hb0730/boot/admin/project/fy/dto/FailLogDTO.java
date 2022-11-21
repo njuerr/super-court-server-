@@ -1,12 +1,19 @@
-package com.hb0730.boot.admin.project.fy.entity;
+package com.hb0730.boot.admin.project.fy.dto;
 
-import com.hb0730.boot.admin.domain.model.entity.BaseDomain;
+import com.hb0730.boot.admin.domain.model.dto.BaseDTO;
 import lombok.Data;
 
-@Data
-public class FyFaillogs extends BaseDomain {
-    private Long id;
+import java.util.Date;
 
+/**
+ * @program: boot-admin
+ * @description:
+ * @author: ax
+ * @create: 2022-11-21 14:10
+ **/
+@Data
+public class FailLogDTO extends BaseDTO {
+    private Long id;
     private String failid;
 
     private String reporttime;
@@ -26,9 +33,5 @@ public class FyFaillogs extends BaseDomain {
     private String deviceid;
 
     private String repair;
-
-    private Integer delFlag;
-
-    public static final String FAILID = "failid";
-
+    private Date updateTime;
 }

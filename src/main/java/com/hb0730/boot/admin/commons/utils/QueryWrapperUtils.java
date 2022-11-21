@@ -10,6 +10,7 @@ import com.hb0730.boot.admin.commons.enums.SortTypeEnum;
 import com.hb0730.boot.admin.domain.model.entity.BaseDomain;
 import com.hb0730.boot.admin.domain.model.entity.BusinessDomain;
 import com.hb0730.boot.admin.domain.model.query.BaseParams;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.lang.NonNull;
 
 import java.util.List;
@@ -76,6 +77,16 @@ public class QueryWrapperUtils {
         if (!CollectionUtil.isEmpty(params.getSortColumn())) {
             String[] array = params.getSortColumn().toArray(new String[0]);
             queryWrapper.orderBy(true, SortTypeEnum.ASC.getValue().equals(params.getSortType()), Lists.newArrayList(array));
+        }
+
+        if (!CollectionUtil.isEmpty(params.getSortColumn())) {
+            String[] array = params.getSortColumn().toArray(new String[0]);
+            queryWrapper.orderBy(true, SortTypeEnum.ASC.getValue().equals(params.getSortType()), Lists.newArrayList(array));
+        }
+
+        if (!StringUtils.isEmpty(params.getDateColumn())) {
+            queryWrapper.gt(params.getDateColumn(), params.getBegin());
+            queryWrapper.lt(params.getDateColumn(), params.getOver());
         }
         return queryWrapper;
     }

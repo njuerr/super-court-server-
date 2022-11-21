@@ -1,11 +1,16 @@
 package com.hb0730.boot.admin.project.fy.service;
 
 import com.hb0730.boot.admin.commons.utils.DateUtils;
+import com.hb0730.boot.admin.domain.service.impl.SuperBaseServiceImpl;
 import com.hb0730.boot.admin.project.fy.dto.FyFaillogsAddDTO;
 import com.hb0730.boot.admin.project.fy.dto.FyFaillogsUpdateDTO;
 import com.hb0730.boot.admin.project.fy.entity.FyFaillogs;
 import com.hb0730.boot.admin.project.fy.mapper.FyFaillogsMapper;
 import com.hb0730.boot.admin.project.fy.vo.FailLogVo;
+import com.hb0730.boot.admin.project.system.post.mapper.IPostMapper;
+import com.hb0730.boot.admin.project.system.post.model.dto.PostDTO;
+import com.hb0730.boot.admin.project.system.post.model.entity.PostEntity;
+import com.hb0730.boot.admin.project.system.post.model.query.PostParams;
 import com.hb0730.boot.admin.security.utils.SecurityUtils;
 import org.springframework.stereotype.Service;
 
@@ -36,10 +41,11 @@ public class FyFaillogsService {
         fyFaillogs.setRepair("0");
         fyFaillogs.setDeviceid(fyFaillogsAddDTO.getDeviceId());
         fyFaillogs.setCourtid(fyFaillogsAddDTO.getCourtId());
-        fyFaillogs.setFailid(UUID.randomUUID().toString());
+        fyFaillogs.setFailid(UUID.randomUUID().toString().substring(0,10));
         fyFaillogs.setFailcontent(fyFaillogsAddDTO.getErrorInput());
         fyFaillogs.setReporttime(DateUtils.format("yyyy-MM-dd HH:mm:ss", new Date()));
         fyFaillogs.setReportuser(Objects.requireNonNull(SecurityUtils.getCurrentUser()).getId().toString());
+        fyFaillogs.setDelFlag(0);
         return insert(fyFaillogs);
     }
 

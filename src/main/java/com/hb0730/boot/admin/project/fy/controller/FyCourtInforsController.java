@@ -2,6 +2,7 @@ package com.hb0730.boot.admin.project.fy.controller;
 
 import com.hb0730.boot.admin.annotation.Log;
 import com.hb0730.boot.admin.commons.enums.BusinessTypeEnum;
+import com.hb0730.boot.admin.domain.controller.SuperSimpleBaseController;
 import com.hb0730.boot.admin.domain.result.R;
 import com.hb0730.boot.admin.domain.result.Result;
 import com.hb0730.boot.admin.project.fy.dto.FyFaillogsAddDTO;
@@ -146,12 +147,12 @@ public class FyCourtInforsController {
         return R.success(qscUtil.devicePosition(courtId));
     }
 
-    @PostMapping("/getMeter/{courtId}")
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
-    @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
-    public Result<MaterRes> getMeter(@PathVariable String courtId) {
-        return R.success(qscUtil.getMeter(courtId));
-    }
+//    @PostMapping("/getMeter/{courtId}")
+//    @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")
+//    @Log(value = "删除", businessType = BusinessTypeEnum.DELETE)
+//    public Result<MaterRes> getMeter(@PathVariable String courtId) {
+//        return R.success(qscUtil.getMeter(courtId));
+//    }
 
 //    @PostMapping("/getMeter/{courtId}")
 //    @PreAuthorize("hasAnyAuthority('ROLE_ADMINISTRATOR','login:log:clean')")

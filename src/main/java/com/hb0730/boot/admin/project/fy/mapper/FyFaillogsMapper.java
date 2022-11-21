@@ -1,5 +1,6 @@
 package com.hb0730.boot.admin.project.fy.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hb0730.boot.admin.project.fy.entity.FyFaillogs;
 import com.hb0730.boot.admin.project.fy.vo.FailLogVo;
 import org.apache.ibatis.annotations.*;
@@ -7,17 +8,17 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 @Mapper
-public interface FyFaillogsMapper {
+public interface FyFaillogsMapper  extends BaseMapper<FyFaillogs> {
     int deleteByPrimaryKey(Long id);
 
     @Insert(" insert into fy_faillogs (failid, reporttime, processtime,\n" +
         "      courtid, reportuser, processuser,\n" +
         "      failcontent, processcontent, deviceid,\n" +
-        "      repair)\n" +
+        "      repair,del_flag)\n" +
         "    values (#{failid,jdbcType=LONGVARCHAR}, #{reporttime,jdbcType=LONGVARCHAR}, #{processtime,jdbcType=LONGVARCHAR},\n" +
         "      #{courtid,jdbcType=LONGVARCHAR}, #{reportuser,jdbcType=LONGVARCHAR}, #{processuser,jdbcType=LONGVARCHAR},\n" +
         "      #{failcontent,jdbcType=LONGVARCHAR}, #{processcontent,jdbcType=LONGVARCHAR}, #{deviceid,jdbcType=LONGVARCHAR},\n" +
-        "      #{repair,jdbcType=LONGVARCHAR})")
+        "      #{repair,jdbcType=LONGVARCHAR},#{delFlag})")
     int insert(FyFaillogs record);
 
     int insertSelective(FyFaillogs record);
