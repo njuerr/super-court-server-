@@ -57,6 +57,14 @@ public enum BusinessTypeEnum implements ValueEnum<Integer> {
      * 执行
      */
     EXECUTOR("执行", 9),
+    /**
+     * 查询
+     */
+    QUERY("查询", 10),
+    /**
+     * 下载
+     */
+    DOWNLOAD("下载", 11),
     ;
     @Getter
     private final String name;

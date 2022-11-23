@@ -84,7 +84,7 @@ public class FyCourtInforsService {
             if (currentUser.getDeptId()!=(-1L)){
                 DeptDTO byId = deptService.findById(currentUser.getDeptId());
                 Integer sort = byId.getSort();
-                fyCourtInfors = fyCourtInforsMapper.selectByCourtId(sort);
+                fyCourtInfors = fyCourtInforsMapper.selectByCourtId(sort,i.getZoneId());
             }else {
                 fyCourtInfors = fyCourtInforsMapper.selectByZoneId(i.getZoneId());
             }
