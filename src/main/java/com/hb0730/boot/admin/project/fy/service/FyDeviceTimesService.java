@@ -42,6 +42,9 @@ public class FyDeviceTimesService{
     public int updateByPrimaryKey(FyDeviceTimes record) {
         return fyDeviceTimesMapper.updateByPrimaryKey(record);
     }
+    public int updateOutLine(FyDeviceTimes record) {
+        return fyDeviceTimesMapper.updateOutLine(record);
+    }
 
     public void online(Integer courtId) {
         FyDeviceTimes record = new FyDeviceTimes();
@@ -54,6 +57,6 @@ public class FyDeviceTimesService{
     public void outline(Integer courtId) {
         FyDeviceTimes fyDeviceTimes = fyDeviceTimesMapper.selectCourt(courtId);
         fyDeviceTimes.setOutlineTime(new Date());
-        updateByPrimaryKey(fyDeviceTimes);
+        updateOutLine(fyDeviceTimes);
     }
 }

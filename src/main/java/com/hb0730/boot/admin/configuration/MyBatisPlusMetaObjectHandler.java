@@ -1,6 +1,7 @@
 package com.hb0730.boot.admin.configuration;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
+import com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes;
 import com.hb0730.boot.admin.security.model.User;
 import com.hb0730.boot.admin.security.utils.SecurityUtils;
 import org.apache.ibatis.reflection.MetaObject;
@@ -39,10 +40,12 @@ public class MyBatisPlusMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void updateFill(MetaObject metaObject) {
-        User currentUser = SecurityUtils.getCurrentUser();
-        if (null != currentUser) {
-            this.fillStrategy(metaObject, "updateUserId", currentUser.getId());
+        if (!(metaObject.getOriginalObject() instanceof FyDeviceTimes)){
+            User currentUser = SecurityUtils.getCurrentUser();
+            if (null != currentUser) {
+                this.fillStrategy(metaObject, "updateUserId", currentUser.getId());
+            }
+            this.fillStrategy(metaObject, "updateTime", LocalDateTime.now());
         }
-        this.fillStrategy(metaObject, "updateTime", LocalDateTime.now());
     }
 }

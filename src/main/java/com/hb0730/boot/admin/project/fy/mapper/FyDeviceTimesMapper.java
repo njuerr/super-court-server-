@@ -30,4 +30,11 @@ public interface FyDeviceTimesMapper extends BaseMapper<FyDeviceTimes> {
 
     @Select("select * from fy_device_times where device_id=#{courtId} and outline_time is null")
     FyDeviceTimes selectCourt(@Param("courtId") Integer courtId);
+
+    @Update("    update fy_device_times\n" +
+        "    set device_id = #{deviceId,jdbcType=VARCHAR},\n" +
+        "      online_time = #{onlineTime,jdbcType=TIMESTAMP},\n" +
+        "      outline_time = #{outlineTime,jdbcType=TIMESTAMP}\n" +
+        "    where id = #{id,jdbcType=INTEGER}")
+    int updateOutLine(FyDeviceTimes record);
 }
