@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.hb0730.boot.admin.project.fy.mapper.FyDeviceTimesMapper;
 
+import java.util.Date;
+
 @Service
 public class FyDeviceTimesService{
 
@@ -41,4 +43,17 @@ public class FyDeviceTimesService{
         return fyDeviceTimesMapper.updateByPrimaryKey(record);
     }
 
+    public void online(Integer courtId) {
+        FyDeviceTimes record = new FyDeviceTimes();
+        record.setDeviceId(courtId.toString());
+        record.setOnlineTime(new Date());
+        insert(record);
+    }
+
+
+    public void outline(Integer courtId) {
+        FyDeviceTimes fyDeviceTimes = fyDeviceTimesMapper.selectCourt(courtId);
+        fyDeviceTimes.setOutlineTime(new Date());
+        updateByPrimaryKey(fyDeviceTimes);
+    }
 }

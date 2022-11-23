@@ -76,6 +76,7 @@ public class WebSecurityConfiguration {
             .antMatchers("/fy/court/big/getCourtInfo").permitAll()
             .antMatchers("/fy/court/big/getZoneInfo").permitAll()
             .antMatchers("/fy/court/download").permitAll()
+            .antMatchers("/receive/online").permitAll()
             // options 开放
             .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
             // 其余认证访问
