@@ -24,13 +24,14 @@ public class MyBatisPlusMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void insertFill(MetaObject metaObject) {
-        User currentUser = SecurityUtils.getCurrentUser();
-        if (null != currentUser) {
-            this.fillStrategy(metaObject, "createUserId", currentUser.getId());
+        if (!(metaObject.getOriginalObject() instanceof FyDeviceTimes)){
+            User currentUser = SecurityUtils.getCurrentUser();
+            if (null != currentUser) {
+                this.fillStrategy(metaObject, "createUserId", currentUser.getId());
+            }
+            this.fillStrategy(metaObject, "createTime", LocalDateTime.now());
+            this.fillStrategy(metaObject, "version", 1);
         }
-        this.fillStrategy(metaObject, "createTime", LocalDateTime.now());
-        this.fillStrategy(metaObject, "version", 1);
-
     }
 
     /**
