@@ -45,7 +45,16 @@ public class IFyFaillogsServiceImpl extends SuperBaseServiceImpl<Long, FailLogPa
     public List<FailLogsExcelDTO> export(@NotNull FailLogParams params) {
         QueryWrapper<FyFaillogs> query = this.query(params);
         List<FyFaillogs> entities = super.list(query);
-        return BeanUtil.copyToList(entities, FailLogsExcelDTO.class);
+        List<FailLogsExcelDTO> failLogsExcelDTOS = BeanUtil.copyToList(entities, FailLogsExcelDTO.class);
+        for (FailLogsExcelDTO failLogsExcelDTO : failLogsExcelDTOS) {
+            failLogsExcelDTO.setCourtName(
+                fyCourtInforsService.selectByPrimaryKey(Long.valueOf(failLogsExcelDTO.getCourtid())).getCourtName());
+            failLogsExcelDTO.setReportuserName(userInfoService.getById(failLogsExcelDTO.getReportuser()).getNickName());
+            if (failLogsExcelDTO.getProcessuser() != null) {
+                failLogsExcelDTO.setProcessuserName(userInfoService.getById(failLogsExcelDTO.getProcessuser()).getNickName());
+            }
+        }
+        return failLogsExcelDTOS;
     }
 
     @Override
@@ -83,4 +92,5 @@ public class IFyFaillogsServiceImpl extends SuperBaseServiceImpl<Long, FailLogPa
         }
         return query;
     }
+
 }

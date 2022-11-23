@@ -1,5 +1,6 @@
 package com.hb0730.boot.admin.project.fy.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hb0730.boot.admin.project.fy.entity.FyZoneInfors;
 import com.hb0730.boot.admin.project.fy.mapper.FyZoneInforsMapper;
 import org.springframework.stereotype.Service;

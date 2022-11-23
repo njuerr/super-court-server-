@@ -39,4 +39,6 @@ public interface FyCourtInforsMapper {
 
     @Select("select * from fy_court_infors where court_zone=#{zoneId}")
     List<FyCourtInfors> selectByZoneId(@Param("zoneId") String zoneId);
+    @Select("select * from fy_court_infors where court_id=#{id}")
+    List<FyCourtInfors> selectByCourtId(@Param("id") Integer id);
 }

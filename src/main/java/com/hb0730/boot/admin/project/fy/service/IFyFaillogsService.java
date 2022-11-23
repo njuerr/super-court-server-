@@ -8,8 +8,10 @@ import com.hb0730.boot.admin.project.fy.dto.FailLogParams;
 import com.hb0730.boot.admin.project.fy.dto.FailLogsExcelDTO;
 import com.hb0730.boot.admin.project.fy.entity.FyFaillogs;
 import com.hb0730.boot.admin.project.system.post.model.query.PostParams;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 
 public interface IFyFaillogsService extends ISuperBaseService<Long, FailLogParams, FailLogDTO, FyFaillogs>, ISuperPoiService<FailLogParams, FailLogsExcelDTO> {
     @Override
@@ -18,4 +20,6 @@ public interface IFyFaillogsService extends ISuperBaseService<Long, FailLogParam
     @Override
     QueryWrapper<FyFaillogs> query(FailLogParams params);
 
+    @Override
+    List<FailLogsExcelDTO> export(@NotNull FailLogParams params);
 }

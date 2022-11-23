@@ -20,12 +20,15 @@ public class FailLogsExcelDTO extends ExcelDomain {
     private String reporttime;
     @ExcelProperty(value = "处理时间", index = 3)
     private String processtime;
-    @ExcelProperty(value = "法院", index = 4)
     private String courtid;
-    @ExcelProperty(value = "上报人", index = 5)
     private String reportuser;
-    @ExcelProperty(value = "处理人", index = 6)
     private String processuser;
+    @ExcelProperty(value = "法院", index = 4)
+    private String courtName;
+    @ExcelProperty(value = "上报人", index = 5)
+    private String reportuserName;
+    @ExcelProperty(value = "处理人", index = 6)
+    private String processuserName;
     @ExcelProperty(value = "故障内容", index = 7)
     private String failcontent;
     @ExcelProperty(value = "处理意见", index = 8)
