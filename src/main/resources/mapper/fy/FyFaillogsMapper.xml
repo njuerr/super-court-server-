@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyFaillogsMapper">
-  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyFaillogs">
+<mapper namespace="com.tingtu.ax.admin.project.fy.mapper.FyFaillogsMapper">
+  <resultMap id="BaseResultMap" type="com.tingtu.ax.admin.project.fy.entity.FyFaillogs">
     <!--@mbg.generated-->
     <!--@Table fy_faillogs-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -33,7 +33,7 @@
     delete from fy_faillogs
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyFaillogs" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyFaillogs" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_faillogs (failid, reporttime, processtime,
       courtid, reportuser, processuser,
@@ -44,7 +44,7 @@
       #{failcontent,jdbcType=LONGVARCHAR}, #{processcontent,jdbcType=LONGVARCHAR}, #{deviceid,jdbcType=LONGVARCHAR},
       #{repair,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyFaillogs" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyFaillogs" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_faillogs
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -112,7 +112,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyFaillogs">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tingtu.ax.admin.project.fy.entity.FyFaillogs">
     <!--@mbg.generated-->
     update fy_faillogs
     <set>
@@ -149,7 +149,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyFaillogs">
+  <update id="updateByPrimaryKey" parameterType="com.tingtu.ax.admin.project.fy.entity.FyFaillogs">
     <!--@mbg.generated-->
     update fy_faillogs
     set failid = #{failid,jdbcType=LONGVARCHAR},

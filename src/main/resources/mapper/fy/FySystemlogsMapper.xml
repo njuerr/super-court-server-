@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FySystemlogsMapper">
-  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FySystemlogs">
+<mapper namespace="com.tingtu.ax.admin.project.fy.mapper.FySystemlogsMapper">
+  <resultMap id="BaseResultMap" type="com.tingtu.ax.admin.project.fy.entity.FySystemlogs">
     <!--@mbg.generated-->
     <!--@Table fy_systemlogs-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -26,14 +26,14 @@
     delete from fy_systemlogs
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FySystemlogs" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FySystemlogs" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_systemlogs (`time`, address, user_name,
       content)
     values (#{time,jdbcType=LONGVARCHAR}, #{address,jdbcType=LONGVARCHAR}, #{userName,jdbcType=LONGVARCHAR},
       #{content,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FySystemlogs" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FySystemlogs" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_systemlogs
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -65,7 +65,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FySystemlogs">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tingtu.ax.admin.project.fy.entity.FySystemlogs">
     <!--@mbg.generated-->
     update fy_systemlogs
     <set>
@@ -84,7 +84,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FySystemlogs">
+  <update id="updateByPrimaryKey" parameterType="com.tingtu.ax.admin.project.fy.entity.FySystemlogs">
     <!--@mbg.generated-->
     update fy_systemlogs
     set `time` = #{time,jdbcType=LONGVARCHAR},

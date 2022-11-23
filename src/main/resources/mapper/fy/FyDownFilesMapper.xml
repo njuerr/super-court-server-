@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyDownFilesMapper">
-  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyDownFiles">
+<mapper namespace="com.tingtu.ax.admin.project.fy.mapper.FyDownFilesMapper">
+  <resultMap id="BaseResultMap" type="com.tingtu.ax.admin.project.fy.entity.FyDownFiles">
     <!--@mbg.generated-->
     <!--@Table fy_down_files-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -27,14 +27,14 @@
     delete from fy_down_files
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDownFiles" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDownFiles" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_down_files (courtid, filename, filesavename,
       filetext, filetype)
     values (#{courtid,jdbcType=LONGVARCHAR}, #{filename,jdbcType=LONGVARCHAR}, #{filesavename,jdbcType=LONGVARCHAR},
       #{filetext,jdbcType=LONGVARCHAR}, #{filetype,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDownFiles" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDownFiles" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_down_files
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -72,7 +72,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDownFiles">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDownFiles">
     <!--@mbg.generated-->
     update fy_down_files
     <set>
@@ -94,7 +94,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDownFiles">
+  <update id="updateByPrimaryKey" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDownFiles">
     <!--@mbg.generated-->
     update fy_down_files
     set courtid = #{courtid,jdbcType=LONGVARCHAR},

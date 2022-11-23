@@ -235,7 +235,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.hb0730.boot.admin.BootAdminApplication</mainClass>
+                    <mainClass>com.tingtu.ax.admin.BootAdminApplication</mainClass>
                     <includeSystemScope>true</includeSystemScope>
                     <layers>
                         <enabled>true</enabled>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyDeviceTimesMapper">
-  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes">
+<mapper namespace="com.tingtu.ax.admin.project.fy.mapper.FyDeviceTimesMapper">
+  <resultMap id="BaseResultMap" type="com.tingtu.ax.admin.project.fy.entity.FyDeviceTimes">
     <!--@mbg.generated-->
     <!--@Table fy_device_times-->
     <id column="id" jdbcType="INTEGER" property="id" />
@@ -25,14 +25,14 @@
     delete from fy_device_times
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDeviceTimes" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_device_times (device_id, online_time, outline_time
       )
     values (#{deviceId,jdbcType=VARCHAR}, #{onlineTime,jdbcType=TIMESTAMP}, #{outlineTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDeviceTimes" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_device_times
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -58,7 +58,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDeviceTimes">
     <!--@mbg.generated-->
     update fy_device_times
     <set>
@@ -74,7 +74,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceTimes">
+  <update id="updateByPrimaryKey" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDeviceTimes">
     <!--@mbg.generated-->
     update fy_device_times
     set device_id = #{deviceId,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyDeviceChannelsMapper">
-  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels">
+<mapper namespace="com.tingtu.ax.admin.project.fy.mapper.FyDeviceChannelsMapper">
+  <resultMap id="BaseResultMap" type="com.tingtu.ax.admin.project.fy.entity.FyDeviceChannels">
     <!--@mbg.generated-->
     <!--@Table fy_device_channels-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -25,14 +25,14 @@
     delete from fy_device_channels
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDeviceChannels" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_device_channels (deviceid, channel_name, channel_code
       )
     values (#{deviceid,jdbcType=LONGVARCHAR}, #{channelName,jdbcType=LONGVARCHAR}, #{channelCode,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDeviceChannels" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_device_channels
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -58,7 +58,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDeviceChannels">
     <!--@mbg.generated-->
     update fy_device_channels
     <set>
@@ -74,7 +74,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyDeviceChannels">
+  <update id="updateByPrimaryKey" parameterType="com.tingtu.ax.admin.project.fy.entity.FyDeviceChannels">
     <!--@mbg.generated-->
     update fy_device_channels
     set deviceid = #{deviceid,jdbcType=LONGVARCHAR},

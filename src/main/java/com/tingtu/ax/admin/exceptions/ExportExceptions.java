@@ -1,0 +1,13 @@
+package com.tingtu.ax.admin.exceptions;
+
+/**
+ * 导出失败
+ *
+ * @author Administrator
+ * @since 3.0.0
+ */
+public class ExportExceptions extends AbstractException {
+    public ExportExceptions(String message, Throwable cause) {
+        super(message, cause);
+    }
+}

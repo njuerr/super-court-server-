@@ -1,0 +1,20 @@
+package com.tingtu.ax.admin.exceptions;
+
+/**
+ * 业务异常
+ *
+ * @author Administrator
+ * @since 3.0.0
+ */
+public class BusinessException extends RuntimeException {
+    public BusinessException() {
+    }
+
+    public BusinessException(String message) {
+        super(message);
+    }
+
+    public BusinessException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}

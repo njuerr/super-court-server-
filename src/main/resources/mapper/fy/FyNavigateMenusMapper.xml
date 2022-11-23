@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyNavigateMenusMapper">
-  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyNavigateMenus">
+<mapper namespace="com.tingtu.ax.admin.project.fy.mapper.FyNavigateMenusMapper">
+  <resultMap id="BaseResultMap" type="com.tingtu.ax.admin.project.fy.entity.FyNavigateMenus">
     <!--@mbg.generated-->
     <!--@Table fy_navigate_menus-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -26,14 +26,14 @@
     delete from fy_navigate_menus
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyNavigateMenus" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyNavigateMenus" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_navigate_menus (menu_name, menu_link, menu_privileges,
       menu_sort)
     values (#{menuName,jdbcType=LONGVARCHAR}, #{menuLink,jdbcType=LONGVARCHAR}, #{menuPrivileges,jdbcType=BIGINT},
       #{menuSort,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyNavigateMenus" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyNavigateMenus" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_navigate_menus
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -65,7 +65,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyNavigateMenus">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tingtu.ax.admin.project.fy.entity.FyNavigateMenus">
     <!--@mbg.generated-->
     update fy_navigate_menus
     <set>
@@ -84,7 +84,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyNavigateMenus">
+  <update id="updateByPrimaryKey" parameterType="com.tingtu.ax.admin.project.fy.entity.FyNavigateMenus">
     <!--@mbg.generated-->
     update fy_navigate_menus
     set menu_name = #{menuName,jdbcType=LONGVARCHAR},

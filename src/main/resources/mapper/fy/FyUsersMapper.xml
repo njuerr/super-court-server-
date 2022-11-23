@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hb0730.boot.admin.project.fy.mapper.FyUsersMapper">
-  <resultMap id="BaseResultMap" type="com.hb0730.boot.admin.project.fy.entity.FyUsers">
+<mapper namespace="com.tingtu.ax.admin.project.fy.mapper.FyUsersMapper">
+  <resultMap id="BaseResultMap" type="com.tingtu.ax.admin.project.fy.entity.FyUsers">
     <!--@mbg.generated-->
     <!--@Table fy_users-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -28,7 +28,7 @@
     delete from fy_users
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyUsers" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyUsers" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_users (user_id, user_name, user_passwd,
       `privileges`, court_id, zone_id
@@ -37,7 +37,7 @@
       #{privileges,jdbcType=BIGINT}, #{courtId,jdbcType=VARCHAR}, #{zoneId,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hb0730.boot.admin.project.fy.entity.FyUsers" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.tingtu.ax.admin.project.fy.entity.FyUsers" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into fy_users
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -81,7 +81,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.hb0730.boot.admin.project.fy.entity.FyUsers">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tingtu.ax.admin.project.fy.entity.FyUsers">
     <!--@mbg.generated-->
     update fy_users
     <set>
@@ -106,7 +106,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.hb0730.boot.admin.project.fy.entity.FyUsers">
+  <update id="updateByPrimaryKey" parameterType="com.tingtu.ax.admin.project.fy.entity.FyUsers">
     <!--@mbg.generated-->
     update fy_users
     set user_id = #{userId,jdbcType=BIGINT},
