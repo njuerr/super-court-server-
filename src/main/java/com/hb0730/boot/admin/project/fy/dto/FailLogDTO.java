@@ -21,10 +21,15 @@ public class FailLogDTO extends BaseDTO {
     private String processtime;
 
     private String courtid;
+    private String courtName;
 
     private String reportuser;
 
+    private String reportuserName;
+
     private String processuser;
+
+    private String processuserName;
 
     private String failcontent;
 
