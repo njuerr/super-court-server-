@@ -166,6 +166,9 @@ public class DateUtils {
     }
 
     public static String format(String pattern,Date date){
+        if (date==null){
+            return  "";
+        }
         SimpleDateFormat simpleDateFormat  = new SimpleDateFormat(pattern);
        return simpleDateFormat.format(date);
     }

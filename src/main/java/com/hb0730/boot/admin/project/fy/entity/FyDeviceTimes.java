@@ -1,10 +1,12 @@
 package com.hb0730.boot.admin.project.fy.entity;
 
-import java.util.Date;
+import com.hb0730.boot.admin.domain.model.entity.BaseDomain;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
-public class FyDeviceTimes {
+public class FyDeviceTimes  extends BaseDomain {
     /**
     * 主键
     */
