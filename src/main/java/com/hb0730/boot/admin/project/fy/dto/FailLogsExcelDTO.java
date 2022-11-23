@@ -1,5 +1,6 @@
 package com.hb0730.boot.admin.project.fy.dto;
 
+import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.hb0730.boot.admin.domain.model.excel.ExcelDomain;
 import lombok.*;
@@ -20,8 +21,11 @@ public class FailLogsExcelDTO extends ExcelDomain {
     private String reporttime;
     @ExcelProperty(value = "处理时间", index = 3)
     private String processtime;
+    @ExcelIgnore
     private String courtid;
+    @ExcelIgnore
     private String reportuser;
+    @ExcelIgnore
     private String processuser;
     @ExcelProperty(value = "法院", index = 4)
     private String courtName;
