@@ -56,7 +56,9 @@ public class FyDeviceTimesService{
 
     public void outline(Integer courtId) {
         FyDeviceTimes fyDeviceTimes = fyDeviceTimesMapper.selectCourt(courtId);
-        fyDeviceTimes.setOutlineTime(new Date());
-        updateOutLine(fyDeviceTimes);
+        if (fyDeviceTimes!=null){
+            fyDeviceTimes.setOutlineTime(new Date());
+            updateOutLine(fyDeviceTimes);
+        }
     }
 }
