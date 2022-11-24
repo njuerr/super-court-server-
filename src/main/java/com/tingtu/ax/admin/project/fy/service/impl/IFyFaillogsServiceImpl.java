@@ -64,6 +64,7 @@ public class IFyFaillogsServiceImpl extends SuperBaseServiceImpl<Long, FailLogPa
         dto.setProcesstime(DateUtils.format("yyyy-MM-dd HH:mm:ss", new Date()));
         dto.setProcessuser(Objects.requireNonNull(SecurityUtils.getCurrentUser()).getId().toString());
         dto.setRepair("1");
+        fyCourtInforsService.online(Integer.valueOf(dto.getCourtid()));
         return super.updateById(aLong, dto);
     }
 
