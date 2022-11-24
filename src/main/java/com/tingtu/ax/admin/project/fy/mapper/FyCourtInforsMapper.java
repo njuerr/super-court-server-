@@ -1,6 +1,8 @@
 package com.tingtu.ax.admin.project.fy.mapper;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tingtu.ax.admin.project.fy.entity.FyCourtInfors;
+import com.tingtu.ax.admin.project.fy.entity.FyFaillogs;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -48,4 +50,7 @@ public interface FyCourtInforsMapper {
         "     court_state = #{state}"+
         "          where court_id = #{id,jdbcType=BIGINT}")
     void line(@Param("id") Integer courtId,@Param("state") Integer state);
+
+    @Select("select * from fy_faillogs where repair=0 and courtid=#{id} ")
+    List<FyFaillogs> list(@Param("id")Integer courtId);
 }

@@ -32,8 +32,6 @@ public class FyCourtInforsService {
     @Autowired
     private IDeptService deptService;
 
-    @Resource
-    private IFyFaillogsService fyFaillogsService;
 
 
     public int deleteByPrimaryKey(Long id) {
@@ -108,10 +106,7 @@ public class FyCourtInforsService {
 
     public void online(Integer courtId) {
         //检查有没有没解决的故障
-        QueryWrapper<FyFaillogs> wrapper = new QueryWrapper<>();
-        wrapper.eq("repair",0);
-        wrapper.eq("courtid",courtId);
-        List<FyFaillogs> list = fyFaillogsService.list(wrapper);
+        List<FyFaillogs> list = fyCourtInforsMapper.list(courtId);
         if (list.size()>0){
             fyCourtInforsMapper.line(courtId,1);
         }else {
