@@ -63,6 +63,8 @@ public class IFyFaillogsServiceImpl extends SuperBaseServiceImpl<Long, FailLogPa
     public boolean updateById(Long aLong, FailLogDTO dto) {
         dto.setProcesstime(DateUtils.format("yyyy-MM-dd HH:mm:ss", new Date()));
         dto.setProcessuser(Objects.requireNonNull(SecurityUtils.getCurrentUser()).getId().toString());
+        dto.setRepair("1");
+        dto.setProcesscontent(dto.getProcessContent());
         return super.updateById(aLong, dto);
     }
 

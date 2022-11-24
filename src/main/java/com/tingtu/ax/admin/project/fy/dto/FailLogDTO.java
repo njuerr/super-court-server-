@@ -39,4 +39,6 @@ public class FailLogDTO extends BaseDTO {
 
     private String repair;
     private Date updateTime;
+
+    private String processContent;
 }
