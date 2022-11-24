@@ -50,11 +50,14 @@ public class FyDeviceTimesService{
     }
 
     public void online(Integer courtId) {
-        FyDeviceTimes record = new FyDeviceTimes();
-        record.setDeviceId(courtId.toString());
-        record.setOnlineTime(new Date());
-        insert(record);
-        fyCourtInforsService.online(courtId);
+        FyDeviceTimes fyDeviceTimes = fyDeviceTimesMapper.selectCourt(courtId);
+        if (fyDeviceTimes==null){
+            FyDeviceTimes record = new FyDeviceTimes();
+            record.setDeviceId(courtId.toString());
+            record.setOnlineTime(new Date());
+            insert(record);
+            fyCourtInforsService.online(courtId);
+        }
     }
 
 
