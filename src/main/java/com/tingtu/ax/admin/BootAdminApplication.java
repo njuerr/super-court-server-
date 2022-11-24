@@ -1,6 +1,7 @@
 package com.tingtu.ax.admin;
 
 import cn.hutool.extra.spring.EnableSpringUtil;
+import com.tingtu.ax.admin.project.fy.qsc.QscUtil;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,13 +17,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication
 @EnableAsync
 @EnableSpringUtil
-public class BootAdminApplication  implements ApplicationRunner {
+public class BootAdminApplication{
     public static void main(String[] args) {
         SpringApplication.run(BootAdminApplication.class, args);
-    }
-
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
-//        QscUtil.getGlobalData();
     }
 }

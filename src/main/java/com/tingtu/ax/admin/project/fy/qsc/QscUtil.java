@@ -22,7 +22,7 @@ public class QscUtil {
 
     public HttpRes listenOpen(ListenOpenDTO listenOpenDTO) {
         try {
-            String s = HttpRequestUtil.sendPost("http:localhost:8090/remoteListen", new Gson().toJson(listenOpenDTO));
+            String s = HttpRequestUtil.sendPost("http://localhost:8090/remoteListen", new Gson().toJson(listenOpenDTO));
             return new Gson().fromJson(s, HttpRes.class);
         } catch (Exception e) {
             return new HttpRes();
@@ -31,7 +31,7 @@ public class QscUtil {
 
     public HttpRes devicePosition(String courtId) {
         try {
-            String s = HttpRequestUtil.sendGet("http:localhost:8090/demo2", "courtId=" + courtId);
+            String s = HttpRequestUtil.sendGet("http://localhost:8090/demo2", "courtId=" + courtId);
             return new Gson().fromJson(s, HttpRes.class);
         } catch (IOException e) {
             return new HttpRes();
