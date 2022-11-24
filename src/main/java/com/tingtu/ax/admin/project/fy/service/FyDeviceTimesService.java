@@ -13,6 +13,9 @@ public class FyDeviceTimesService{
     @Resource
     private FyDeviceTimesMapper fyDeviceTimesMapper;
 
+    @Resource
+    private FyCourtInforsService fyCourtInforsService;
+
 
     public int deleteByPrimaryKey(Integer id) {
         return fyDeviceTimesMapper.deleteByPrimaryKey(id);
@@ -51,6 +54,7 @@ public class FyDeviceTimesService{
         record.setDeviceId(courtId.toString());
         record.setOnlineTime(new Date());
         insert(record);
+        fyCourtInforsService.online(courtId);
     }
 
 
@@ -59,6 +63,7 @@ public class FyDeviceTimesService{
         if (fyDeviceTimes!=null){
             fyDeviceTimes.setOutlineTime(new Date());
             updateOutLine(fyDeviceTimes);
+            fyCourtInforsService.outline(courtId);
         }
     }
 }
