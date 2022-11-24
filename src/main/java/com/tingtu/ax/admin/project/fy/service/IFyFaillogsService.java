@@ -15,6 +15,7 @@ public interface IFyFaillogsService extends ISuperBaseService<Long, FailLogParam
     @Override
     boolean updateById(FailLogDTO dto);
 
+
     @Override
     QueryWrapper<FyFaillogs> query(FailLogParams params);
 

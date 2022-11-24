@@ -4,9 +4,11 @@ import com.tingtu.ax.admin.commons.utils.DateUtils;
 import com.tingtu.ax.admin.project.fy.dto.FyFaillogsAddDTO;
 import com.tingtu.ax.admin.project.fy.dto.FyFaillogsUpdateDTO;
 import com.tingtu.ax.admin.project.fy.entity.FyFaillogs;
+import com.tingtu.ax.admin.project.fy.mapper.FyCourtInforsMapper;
 import com.tingtu.ax.admin.project.fy.mapper.FyFaillogsMapper;
 import com.tingtu.ax.admin.project.fy.vo.FailLogVo;
 import com.tingtu.ax.admin.security.utils.SecurityUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -20,6 +22,9 @@ public class FyFaillogsService {
 
     @Resource
     private FyFaillogsMapper fyFaillogsMapper;
+
+    @Autowired
+    private FyCourtInforsMapper fyCourtInforsMapper;
 
 
     public int deleteByPrimaryKey(Long id) {
@@ -41,6 +46,7 @@ public class FyFaillogsService {
         fyFaillogs.setReporttime(DateUtils.format("yyyy-MM-dd HH:mm:ss", new Date()));
         fyFaillogs.setReportuser(Objects.requireNonNull(SecurityUtils.getCurrentUser()).getId().toString());
         fyFaillogs.setDelFlag(0);
+        fyCourtInforsMapper.line(Integer.valueOf(fyFaillogsAddDTO.getCourtId()),1);
         return insert(fyFaillogs);
     }
 
