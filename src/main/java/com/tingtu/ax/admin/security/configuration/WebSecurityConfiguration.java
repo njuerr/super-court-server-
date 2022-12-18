@@ -43,13 +43,21 @@ public class WebSecurityConfiguration {
      */
     private final AccessDeniedHandler accessDeniedServiceHandler;
 
-    /*登出成功*/
+    /**
+     * 登出成功
+     **/
     private final LogoutSuccessHandler logoutSuccessServiceHandler;
-    /*跨域处理*/
+    /**
+    跨域处理
+    **/
     private final CorsFilter corsFilter;
-    /*jwt token认证*/
+    /**
+     * jwt token认证
+     */
     private final JwtTokenAuthenticationFilter jwtTokenAuthenticationFilter;
-    /*用户详情服务*/
+    /**
+     * 用户详情服务
+     * */
     private final UserDetailsService userDetailsService;
 
     @Bean

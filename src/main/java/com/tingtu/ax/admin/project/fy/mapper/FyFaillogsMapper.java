@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 @Mapper
-public interface FyFaillogsMapper  extends BaseMapper<FyFaillogs> {
+public interface FyFaillogsMapper extends BaseMapper<FyFaillogs> {
     int deleteByPrimaryKey(Long id);
 
     @Insert(" insert into fy_faillogs (failid, reporttime, processtime,\n" +

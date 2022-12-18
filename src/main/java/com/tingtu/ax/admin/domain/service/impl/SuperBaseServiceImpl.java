@@ -23,7 +23,7 @@ import java.util.List;
  * 基础service 实现基本的curd<br>
  * 所有的service应当继承此类,以便Controller基类的调用{@link SuperSimpleBaseController}
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class SuperBaseServiceImpl<ID extends Serializable, PARAMS extends BaseParams, DTO extends BaseDTO, ENTITY extends BaseDomain, MAPPER extends BaseMapper<ENTITY>>

@@ -14,3 +14,4 @@ public class UsernameNotFoundException extends AbstractException {
         super(message, cause);
     }
 }
+

@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 /**
@@ -167,8 +168,9 @@ public class FyCourtInforsController {
 
     @GetMapping("/download")
     @Log(value = "下载文件", businessType = BusinessTypeEnum.DOWNLOAD)
-    public String downLoad(String fileName, HttpServletRequest request, HttpServletResponse response) throws IOException {
-        downLoadUtil.downloadFile(request, response,fileName);
+    public String downLoad(String fileName, HttpServletRequest request, HttpServletResponse response) throws IOException, URISyntaxException {
+        downLoadUtil.downloadNet(response);
+//        downLoadUtil.downloadFile2(request, response,fileName);
         return "正在下载";
     }
 

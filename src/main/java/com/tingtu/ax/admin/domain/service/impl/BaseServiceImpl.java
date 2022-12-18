@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
  * mybatis Plus 无法填充 非entity {@link com.baomidou.mybatisplus.core.MybatisDefaultParameterHandler#process(MappedStatement, Object)}<br>
  * 注意：这里只对{@link #update(Wrapper)}进行扩展，理应对所有的cud等方法扩展修改时间与修改者
  *
- * @author bing_huang
+ * @author Administrator
  * @since 3.0.0
  */
 public class BaseServiceImpl<MAPPER extends BaseMapper<ENTITY>, ENTITY> extends ServiceImpl<MAPPER, ENTITY> {

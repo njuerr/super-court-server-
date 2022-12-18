@@ -25,4 +25,6 @@ public class DictEventListener implements ApplicationListener<DictEvent> {
     public void onApplicationEvent(@Nonnull DictEvent event) {
         dictService.updateCache();
     }
+
+
 }

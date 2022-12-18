@@ -9,11 +9,11 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+
 /**
  * 通用controller请求参数
  *
- * @author bing_huang
- * @since 3.0.0
+ * @author Administrator
  */
 @Data
 @ToString
